@@ -116,7 +116,8 @@ Plug 'scrooloose/nerdcommenter'
 " Changed because ansible is now handling fzf config separately
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'junegunn/fzf.vim'
-Plug '~/.fzf'
+Plug '~/.local/share/fzf'
+Plug 'junegunn/fzf.vim'
 " }}}
 
 " Javascript Plugins{{{
