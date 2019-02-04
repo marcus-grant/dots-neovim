@@ -84,6 +84,7 @@ if has('nvim')
 " fzf {{{
 "================================
 nnoremap <leader>f :Files<cr>
+nnoremap <leader>g :Rg<cr>
 " }}}
 
 """ Copy to Clipboard {{{
