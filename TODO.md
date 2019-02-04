@@ -1,6 +1,7 @@
 TODOs
 =====
 
+- [ ] Split configs into `./configs` dir & load all files there in order in `init.vim`
 - [ ] ansible syntax
 - [ ] ansible snippets
 - [ ] ansible linting
