@@ -1,2 +1,7 @@
 # Ignore plugins
 plugged/
+
+# Local overrides
+local-vars.vim
+local-configs.vim
+
