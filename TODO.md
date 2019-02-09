@@ -6,6 +6,7 @@ TODOs
 * [ ] ansible snippets
 * [ ] ansible linting
 * [ ] ansible autocomplete
+* [ ] move all snippets into `./snips`
 * [ ] js prettier handler (and other langs if time)
 * [ ] typescript autocomplete
 * [ ] typescript linter

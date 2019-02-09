@@ -76,6 +76,11 @@ Plug 'scrooloose/nerdcommenter'
 Plug '~/.local/share/fzf'
 Plug 'junegunn/fzf.vim'
 
+" Linting 
+" ALE - Asynchronous Lint Engine
+Plug 'w0rp/ale'
+
+
 " Javascript Plugins
 "================================
 " Improved JS & JSX support
@@ -102,9 +107,12 @@ Plug 'python-mode/python-mode', { 'branch': 'develop' }
 let g:pymode_python = 'python3'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
-" Linting 
-" ALE - Asynchronous Lint Engine
-Plug 'w0rp/ale'
+
+" Ansible 
+"================================
+" syntax plugin for ansible supporting yaml, jinja2 & hostfiles.
+Plug 'pearofducks/ansible-vim'
+Plug 'stephpy/vim-yaml'
 
 
 " Git 
