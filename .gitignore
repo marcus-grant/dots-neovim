@@ -1,2 +1,5 @@
 # Ignore plugins
 plugged/
+
+# netrwhist - the network change history file, specific to local
+.netrwhist
