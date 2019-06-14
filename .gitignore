@@ -5,3 +5,5 @@ plugged/
 local-vars.vim
 local-configs.vim
 
+# netrwhist - the network change history file, specific to local
+.netrwhist
