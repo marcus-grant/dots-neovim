@@ -36,7 +36,7 @@ Markdown Editing
 ----------------
 
 ### Vim-Pandoc ###
-- Some great settings are detailed in this [reddit thread][17]
+- Some great settings are detailed in this [reddit thread][16]
 * this plugin automatically has spell check concealing on, disable it on startup by putting this in the plugins config file `set nospell`
 * Turn it back on again by going to *command mode* & entering `set spell`
 
@@ -151,19 +151,19 @@ File Management
 Completion
 ----------
 
-* This guy wrote a decent enough [guide][18] this when combining `ultisnips`, `deoplete`, `ternjs` & `jspc`
+* This guy wrote a decent enough [guide][17] this when combining `ultisnips`, `deoplete`, `ternjs` & `jspc`
   * It misses a crucial setting, `let g:deoplete#sources.javascript = ['buffer', 'tern']`
   * crucial because the way he writes it is `...#sources['javascript']...` which fails
-* Uses [carlitux/deoplete-ternjs][19] to manage displaying completions from tern
+* Uses [carlitux/deoplete-ternjs][18] to manage displaying completions from tern
 * `sudo npm i -g tern` is required to install on local system
 * `tern` will also need to be configured with a `.tern-project` specific to the project or local userspace
-  * The Tern [documentation][21] is a good pace to start
+  * The Tern [documentation][20] is a good pace to start
 * Even better tab behavior can be creating by watching states of ultisnips & deoplete and using supertab functions
-  * this [dotfile][22] shows it might be possible to make it work for just `Tab` & `Enter` keys
+  * this [dotfile][21] shows it might be possible to make it work for just `Tab` & `Enter` keys
     * I tried it but it didn't quite work
     * The failed test is in the branch `neo/experimental`
 * if the plugin system doesn't automatically handle the installation of node packs for the plugins make sure deoplete-tern has its plug dir run it
-  * same for [tern_for_vim][20]
+  * same for [tern_for_vim][19]
 * `tern_for_vim` & `deoplete-ternjs` needs some improvements like...
   * Not reversing the order of `<Tab>` during completion selection
   * showing function signatures in popup menu, refered to as `pum`
@@ -173,6 +173,14 @@ Completion
   * `TernRefs`
   * `TernRename`
 
+
+Searching
+---------
+
+* Uses `fzf` plugin as a fuzzy finder that narrows lists of things by substrings
+* `<leader>` + `f` uses `fd-find` to search for filenames within the current filetree
+* `<leader>` + `g` uses `ripgrep` to search for substrings in every file in tree
+* type `help fzf` to look at other functionality or go to the plugin repo
 
 
 Snippets
@@ -191,66 +199,23 @@ To-Do's
 -------
 
 * Miscellaneous
-	* [x] Install Script
-	* [x] Plugin Manager
-	* [x] Tmux integration
-	* [x] NERDTree
-	* [x] Pane Management w/ Keymaps
-	* [x] Sufficient Defaults
-	* [x] `foldmethod=marker` for vim & sh
-	* [x] `noh` binding, using leader key
-	* [ ] Snippets [`Github: SirVer/ultisnips`][14]
-	* [ ] Better folding techniques
-	  * A good [guide][12]
 	* [ ] Class & Function Tags
 	* [ ] mvim
 	* [ ] Update Scripts
-    * [ ] Smarter tabs, [this][22] is a good place to start
+    * [ ] Smarter tabs, [this][21] is a good place to start
 	* [ ] Bash Aliases "mevim"
 	* [ ] Improve portability with xdg & dynamic filepaths: [link][100]
-	* [ ] indentation grids
 	* [ ] Basic neovim terminal keymaps, like [this][11] maybe?
 	  * just use a light `|` character
-* FuzzyFinder with Keymaps
-  * [x] fuzzy finder
-	  * `fzf.vim` installed
-	  * `<leader>+f` opens `Files:` command to search for files
-  * [ ] fzf & ripgrep function to search notes directory & open the selected file
 * Markdown
-	* [x] `noh` binding, using leader key
-	* [x] External Renderer
-		* Handled by `vim-markdown-composer`
-	* [x] Pandoc Integration
-		* handled by `vim-pandoc`
-		* [ ] update `init.vim` to only load by filetype
-	* [ ] External pandoc hooks
-	* [ ] table formatting
-	* [ ] Distraction free mode [goyo][15]
-	* [ ] Concealer options
-	* [ ] Settings from this [article](https://hackernoon.com/vim-for-writers-ee15d2a8f512)
-	* [ ] Auto fold h2 & lower
-	* [ ] Block Editing
-	* [ ] Highlighting
-	* [ ] Linting Grammar & Spelling *(write-good?)*
-	* [ ] Latex Blocks
-	* [ ] Ctags integration?
-	* [ ] Automatic references link or bibilography
 	* [ ] Better moving through large blocks of text
 		* Perhaps using hard/soft wraps?
 		* Perhaps using block focusing, where only one block is seen by choice
 		* Should have some keymaps to better move through a block
-	* [ ] Some kind of *org-mode*-like features
-		* Perhaps `vimwiki`
-		* concealer syntaxes for markdown
-	* [ ] Prose focused writing mode, *(think iA writer)*
 	* [ ] Dictionary & Thesaurus features
 * Javascript
-	* [x] Proper Syntax & Spacing
-		* handled by `vim-jsx` & `vim-javascript`
-	* [x] JSX recognition
 	* [ ] Folding 
 	* [ ] ternjs with deoplete
-	* [ ] graphQL highlighting
 	* [ ] Snippets
 	* [ ] JSDocs
 		* [ ] `vim-jsdoc`
@@ -261,11 +226,6 @@ To-Do's
 	* [ ] EditorConfigs
 	* [ ] Emmet configs for JSX
 	* [ ] Local & Import Autocomplete
-* HTML & CSS
-	* [ ] Emmet & Keymaps
-	* [ ] Tag Surrounds
-	* [ ] File & Local Autocomplete
-	* [ ] RGB highlighting
 * Go
 	* [ ] Linting
 	* [ ] Autocompletion
@@ -282,7 +242,7 @@ To-Do's
 * Appearance
 	* [x] fix `PaperColor` highlighting for conceals
 		  * handled by chancing `Conceal` option in `colors/PaperColor.vim`
-	* [ ] Nice low contrast theme with bells & whistles [`seoul256`][16]
+	* [ ] Nice low contrast theme with bells & whistles [`seoul256`][15]
 	* [ ] Gruvbox theme
 	* [ ] `ayu.vim`
 	* [ ] General concealers
@@ -302,17 +262,16 @@ References
 9. [Hackernoon: Go & NeoVim][09]
 10. [Github: calitux/deoplete-ternjs][10]
 11. [Jacques Visser (Medium): Neovim Has a Built-In Terminal Emulator?!][11]
-12. [Steve Losh - Advanced Folding][12]
-13. [Github: junegunn/fzf.vim][13]
-14. [Github: SirVer/ultisnips][14]
-15. [Github: junnegun/goyo.vim - Distraction-Free Writting][15]
-16. [Github: junnegun/seoul256][16]
-17. [r/vim: Great Notetaking Configs][17]
-18. [Flawed but useful overview on deoplete with snips, & tern][18]
-19. [Github: carlitux/deoplete-ternjs][19]
-20. [Github: ternjs/tern_for_vim][20]
-21. [TernJS: Reference Manual - Needed to configure local TernJs][21]
-22. [Github: simonweil/dotfiles (addresses smarttab for everything with tab & enter][22]
+12. [Github: junegunn/fzf.vim][12]
+13. [Github: SirVer/ultisnips][13]
+14. [Github: junnegun/goyo.vim - Distraction-Free Writting][14]
+15. [Github: junnegun/seoul256][15]
+16. [r/vim: Great Notetaking Configs][16]
+17. [Flawed but useful overview on deoplete with snips, & tern][17]
+18. [Github: carlitux/deoplete-ternjs][18]
+19. [Github: ternjs/tern_for_vim][19]
+20. [TernJS: Reference Manual - Needed to configure local TernJs][20]
+21. [Github: simonweil/dotfiles (addresses smarttab for everything with tab & enter][21]
 
 
 [01]: https://github.com/rafi/vim-config "Github/rafi/vim-config: A good example of a config"
@@ -326,16 +285,15 @@ References
 [09]: https://hackernoon.com/my-neovim-setup-for-go-7f7b6e805876 "Hackernoon: Go & NeoVim"
 [10]: https://github.com/carlitux/deoplete-ternjs "Github: calitux/deoplete-ternjs"
 [11]: https://medium.com/@jcqvisser/neovim-has-a-built-in-terminal-emulator-cf057f767dbc "Jacques Visser (Medium): Neovim Has a Built-In Terminal Emulator?!"
-[12]: http://learnvimscriptthehardway.stevelosh.com/chapters/49.html "Steve Losh - Advanced Folding"
-[13]: https://github.com/junegunn/fzf.vim "Github: junegunn/fzf.vim"
-[14]: https://github.com/SirVer/ultisnips "Github: SirVer/ultisnips"
-[15]: https://github.com/junegunn/goyo.vim "Github: junnegun/goyo.vim - Distraction-Free Writting"
-[16]: https://github.com/junegunn/seoul256.vim "Github: junnegun/seoul256"
-[17]: https://www.reddit.com/r/vim/comments/2r24nm/note_taking_using_vim_and_pandocs/ "r/vim: Great Notetaking Configs"
-[18]: https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/ "Flawed but useful overview on deoplete with snips, & tern"
-[19]: https://github.com/carlitux/deoplete-ternjs "Github: carlitux/deoplete-ternjs"
-[20]: https://github.com/ternjs/tern_for_vim "Github: ternjs/tern_for_vim"
-[21]: http://ternjs.net/doc/manual.html "TernJS: Reference Manual - Needed to configure local TernJs"
-[22]: https://github.com/simonweil/dotfiles/blob/master/nvimrc "Github: simonweil/dotfiles (addresses smarttab for everything with tab & enter"
+[12]: https://github.com/junegunn/fzf.vim "Github: junegunn/fzf.vim"
+[13]: https://github.com/SirVer/ultisnips "Github: SirVer/ultisnips"
+[14]: https://github.com/junegunn/goyo.vim "Github: junnegun/goyo.vim - Distraction-Free Writting"
+[15]: https://github.com/junegunn/seoul256.vim "Github: junnegun/seoul256"
+[16]: https://www.reddit.com/r/vim/comments/2r24nm/note_taking_using_vim_and_pandocs/ "r/vim: Great Notetaking Configs"
+[17]: https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/ "Flawed but useful overview on deoplete with snips, & tern"
+[18]: https://github.com/carlitux/deoplete-ternjs "Github: carlitux/deoplete-ternjs"
+[19]: https://github.com/ternjs/tern_for_vim "Github: ternjs/tern_for_vim"
+[20]: http://ternjs.net/doc/manual.html "TernJS: Reference Manual - Needed to configure local TernJs"
+[21]: https://github.com/simonweil/dotfiles/blob/master/nvimrc "Github: simonweil/dotfiles (addresses smarttab for everything with tab & enter"
 
 [100]: http://bit.ly/2y0UkPU
