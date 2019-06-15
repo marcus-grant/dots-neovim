@@ -13,7 +13,13 @@ Plug 'christoomey/vim-tmux-navigator'
 " Completion & Snippets 
 "================================
 " deoplete autocompletion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+if g:autocomplete_engine ==? 'deo'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+elseif g:autocomplete_engine ==? 'coc'
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+    " TODO keep going there's much more to this
+endif
+
 Plug 'ervandew/supertab'
 
 " Snippets
@@ -27,16 +33,20 @@ endif
 " TernJS
 " Disabled for now since it might be a bit silly to use both
 " Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
-Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
+if g:autocomplete_engine ==? 'deo'
+    Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install -g tern' }
+endif
 
 " JSPC - Parameter Completion
 " TODO I'm not sure this works, it's inactive and might be slow, investigate
-Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
 
 " Python Completion 
 "================================
-Plug 'zchee/deoplete-jedi'
+if g:autocomplete_engine ==? 'deo'
+    Plug 'zchee/deoplete-jedi'
+endif
 
 
 " UI 
@@ -58,8 +68,6 @@ Plug 'yggdroot/indentLine'
 
 " Debuggers 
 "========================
-
-"}}}
 
 " NERD 
 "================================
@@ -155,18 +163,19 @@ Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'pandoc'] }
 " autocmd! User goyo.vim echom 'Goyo is now loaded!'
 
 " euclio/vim-markdown-composer a rust-based web server that live-renders markdown
-function! BuildComposer(info)
-  if a:info.status != 'unchanged' || a:info.force
-    if has('nvim')
-      !cargo build --release
-    else
-      !cargo build --release --no-default-features --features json-rpc
-    endif
-  endif
-endfunction
+if g:markdown_composer_enabled
+    function! BuildComposer(info)
+      if a:info.status != 'unchanged' || a:info.force
+        if has('nvim')
+          !cargo build --release
+        else
+          !cargo build --release --no-default-features --features json-rpc
+        endif
+      endif
+    endfunction
+endif
 
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-"}}}
 
 " Test Running 
 "================================

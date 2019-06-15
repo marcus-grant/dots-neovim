@@ -30,6 +30,9 @@ let g:configs_dir = '~/.config/nvim/configs'
 let g:airline_enabled = 1 " 1 enables airline plugin
 let g:snippet_manager = 'ultisnips' " specify snippets manager plugin
 let g:markdown_engine = 'vim-markdown' " which markdown engine plugin?
+let g:markdown_composer_enabled =  1 " enables markdown composer (huge plug, needs rust)
+let g:autocomplete_engine = 'deo' " deo | coc
+" let g:
 
 
 """ General editor variables
