@@ -12,6 +12,8 @@ Overall Design of NeoVim Configs
 Keymaps
 -------
 
+### Misc.
+
 * Leader: (`,` key)
   * `<leader>l`: Toggle `vim-javascript` concealing features
   * `<leader>f`: Bring up fzf file search with command `Files`
@@ -19,7 +21,18 @@ Keymaps
 * Control `^SOMEKEY`
   * `^j`: during insert will expand ultisnips if detected by deoplete & will jump through snippet insertions when repeated
   * In the future, `supertab` can be used to defined smarter behavior for the tab key so everything can be managed there
-* Pane Controls
+
+### COC
+
+* <Tab> -> Next completion when in insert
+* <S-Tab> -> Previous completion when in insert
+* <cr> -> Complete completion in insert
+* <leader>gd -> coc-definition
+* <leader>gt -> coc-type-definition
+* <leader>gi -> coc-implementation
+* <leader>gr -> coc-references
+* <leader>e -> coc next error
+* <leader>w -> coc previous error
 
 
 Folding
@@ -78,6 +91,11 @@ There are various configurations that are unfortunately only written down into t
   * Can be local paths and URLs
   * **NOTE** they **must** use absolute and prefixed schemes like so: `file:///home/euclio/markdown.css`
 
+
+FZF
+---
+
+* Maps - Looks up keymaps
 
 Javascript
 ----------

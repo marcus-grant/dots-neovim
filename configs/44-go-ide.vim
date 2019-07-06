@@ -20,6 +20,11 @@ au FileType go nmap <F6> :w<cr>:GoRun<cr>
 au FileType go nmap <F9> :DlvToggleBreakpoint<cr>
 " TODO: Add more later, and also consider them for other languages in debug
 
+" Overwrite the vim-go hotkey for jump to def if using coc
+if g:autocomplete_engine ==? 'coc'
+    let g:go_def_mapping_enabled = 0
+endif
+
 "    highlighting settings
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1

@@ -5,6 +5,14 @@
 call plug#begin("~/.config/nvim/plugged/")
 " Plugins list, ONLY USE SINGLE QUOTES for references
 
+" SuperTab (for some reason needs early load) 
+"================================
+" Supertab to control completions
+if g:autocomplete_engine ==? 'deo'
+    Plug 'ervandew/supertab'
+endif
+
+
 " TMUX 
 "================================
 " vim-tmux-navigator to integrate panes with tmux
@@ -12,15 +20,14 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Completion & Snippets 
 "================================
+
 " deoplete autocompletion
 if g:autocomplete_engine ==? 'deo'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 elseif g:autocomplete_engine ==? 'coc'
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " TODO keep going there's much more to this
 endif
-
-Plug 'ervandew/supertab'
 
 " Snippets
 " Implements a global var to determine if ultisnips should be used
@@ -86,7 +93,10 @@ Plug 'junegunn/fzf.vim'
 
 " Linting 
 " ALE - Asynchronous Lint Engine
-Plug 'w0rp/ale'
+" TODO determine if you lose anything desirable without ALE on COC
+if g:autocomplete_engine ==? 'deo'
+    Plug 'w0rp/ale'
+endif
 
 
 " Javascript Plugins

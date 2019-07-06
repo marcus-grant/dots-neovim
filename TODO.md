@@ -1,19 +1,30 @@
 TODOs
 =====
 
-* [ ] Split configs into `./configs` dir & load all files there in order in `init.vim`
+* [ ] CoC extions: coc-
+* [ ] Ctrl + / remap for NerdCommenter Toggle like [this](http://bit.ly/2S250VE)
+* [ ] Fix CMD display area for COC which 
+* [ ] Sort PUM of COC correctly, most likely closest to tab
+* [ ] vim-test config init
 * [ ] ansible syntax
 * [ ] ansible snippets
 * [ ] ansible linting
 * [ ] ansible autocomplete
+* [ ] jest vim-test config
 * [ ] move all snippets into `./snips`
 * [ ] js prettier handler (and other langs if time)
 * [ ] typescript autocomplete
 * [ ] typescript linter
 * [ ] typescript prettier
+* [ ] go vim-test config
 * [ ] Better markdown concealer options
+* [ ] coc-snippets
+* [ ] CoC preview window for each completion - *(might need newer nvim ver.)*
+* [ ] Close preivew window when CoC completion done
 * [ ] Auto fold h2 & lower
 * [ ] Block Editing
+* [ ] Was disabling ALE on COC a good choice?
+* [ ] Was disabling SuperTab on COC good?
 * [ ] Custom rg/fzf fd/fzf functions to search all notes & all code
 * [ ] Indentation grids
 * [ ] graphQL highlighting
@@ -43,6 +54,12 @@ Planning
 Complete
 ========
 
+* [x] Enter to complete CoC completions
+* [x] Tab / S-Tab to cycle CoC completions
+* [x] Disable SuperTab when COC active
+* [x] Jump to next error in coc using <leader>e and <leader>w
+* [x] Disable ALE when using COC (For Now Determine later if good)
+* [x] Split configs into `./configs` dir & load all files there in order in `init.vim`
 * [x] Add TODOs.md `d7348be`
 * [x] Distraction free mode [goyo][14]
 * [x] Snippets [`Github: SirVer/ultisnips`][14]
