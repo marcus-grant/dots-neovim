@@ -1,7 +1,6 @@
 TODOs
 =====
 
-* [ ] CoC extions: coc-
 * [ ] Ctrl + / remap for NerdCommenter Toggle like [this](http://bit.ly/2S250VE)
 * [ ] Fix CMD display area for COC which 
 * [ ] Sort PUM of COC correctly, most likely closest to tab
@@ -16,6 +15,7 @@ TODOs
 * [ ] typescript autocomplete
 * [ ] typescript linter
 * [ ] typescript prettier
+* [ ] coc spelling and grammar on regular text files like md
 * [ ] go vim-test config
 * [ ] Better markdown concealer options
 * [ ] coc-snippets
@@ -54,6 +54,7 @@ Planning
 Complete
 ========
 
+* [x] CoC extions: coc-tsserver coc-eslint coc-json coc-prettier coc-css
 * [x] Enter to complete CoC completions
 * [x] Tab / S-Tab to cycle CoC completions
 * [x] Disable SuperTab when COC active

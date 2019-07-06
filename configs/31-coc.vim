@@ -2,7 +2,14 @@
 " some stuff taken from: http://bit.ly/2WHw2lB
 
 if g:autocomplete_engine ==? 'coc'
-" echo('coc in use')
+" specify which coc extensions to use:
+let g:coc_global_extensions = [
+    \ 'coc-tsserver',
+    \ 'coc-eslint',
+    \ 'coc-json',
+    \ 'coc-prettier',
+    \ 'coc-css'
+    \ ]
 " if hidden isnt set, text edit might fail
 set hidden
 " Better display for messages
