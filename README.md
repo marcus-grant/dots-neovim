@@ -34,6 +34,12 @@ Keymaps
 * <leader>e -> coc next error
 * <leader>w -> coc previous error
 
+### NERDCommenter
+
+* <leader>c<Space> -> toggle comments
+* <leader>/ -> toggle comments
+* Can't seem to find a way to bind the default 
+
 
 Folding
 -------

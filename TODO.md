@@ -1,10 +1,9 @@
 TODOs
 =====
 
-* [ ] Ctrl + / remap for NerdCommenter Toggle like [this](http://bit.ly/2S250VE)
-* [ ] Fix CMD display area for COC which 
 * [ ] Sort PUM of COC correctly, most likely closest to tab
 * [ ] vim-test config init
+* [ ] Any other new extensions for coc like [these](http://bit.ly/2S0cYyl)
 * [ ] ansible syntax
 * [ ] ansible snippets
 * [ ] ansible linting
@@ -54,6 +53,9 @@ Planning
 Complete
 ========
 
+* [x] Ctrl + / remap for NerdCommenter Toggle like [this](http://bit.ly/2S250VE)
+    * Unfortunately I can't seem to get vim to recognize `<C-/>` like vscode uses
+    * I recall reading something about that combination not working from stackO don't know why
 * [x] CoC extions: coc-tsserver coc-eslint coc-json coc-prettier coc-css
 * [x] Enter to complete CoC completions
 * [x] Tab / S-Tab to cycle CoC completions

@@ -3,13 +3,7 @@
 
 if g:autocomplete_engine ==? 'coc'
 " specify which coc extensions to use:
-let g:coc_global_extensions = [
-    \ 'coc-tsserver',
-    \ 'coc-eslint',
-    \ 'coc-json',
-    \ 'coc-prettier',
-    \ 'coc-css'
-    \ ]
+let g:coc_global_extensions = ['coc-tsserver', 'coc-tslint', 'coc-tslint-plugin', 'coc-eslint',  'coc-prettier', 'coc-css', 'coc-json', 'coc-yaml']
 " if hidden isnt set, text edit might fail
 set hidden
 " Better display for messages
