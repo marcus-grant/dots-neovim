@@ -7,13 +7,15 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-tslint', 'coc-tslint-plugin'
 " if hidden isnt set, text edit might fail
 set hidden
 " Better display for messages
-" set cmdheight=2
+set cmdheight=2 " TODO come back to this if annoyed by 2 height it's recommended
 " Set the update time for cursor hold for autocomplete
 set updatetime=300 " milliseconds
 " Less time for cursor updates
 set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
