@@ -5,6 +5,7 @@ TODOs
 * [ ] vim-test config init
 * [ ] Any other new extensions for coc like [these](http://bit.ly/2S0cYyl)
 * [ ] ansible syntax
+* [ ] custom function to go to previously open buffer
 * [ ] ansible snippets
 * [ ] ansible linting
 * [ ] ansible autocomplete
