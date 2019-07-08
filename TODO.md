@@ -1,10 +1,12 @@
 TODOs
 =====
 
+* [ ] update coc configs like the repo [documentation](http://bit.ly/2L8xxbw) example shows
 * [ ] Sort PUM of COC correctly, most likely closest to tab
 * [ ] vim-test config init
 * [ ] Any other new extensions for coc like [these](http://bit.ly/2S0cYyl)
 * [ ] ansible syntax
+* [ ] custom function to go to previously open buffer
 * [ ] ansible snippets
 * [ ] ansible linting
 * [ ] ansible autocomplete
