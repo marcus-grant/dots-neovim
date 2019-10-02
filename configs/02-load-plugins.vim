@@ -177,6 +177,10 @@ endif
 
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 
+" Session Management
+"================================
+Plug 'tpope/vim-obsession'
+
 " Test Running 
 "================================
 " vim-test
