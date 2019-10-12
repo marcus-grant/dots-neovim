@@ -77,6 +77,13 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " NERD commenter for better filetype comments
 Plug 'scrooloose/nerdcommenter'
 
+" Tagbar & NERDTree + Tagbar
+"================================
+Plug 'majutsushi/tagbar'
+Plug 'pseewald/nerdtree-tagbar-combined'
+nmap <F7> :ToggleNERDTreeAndTagbar<CR>
+
+
 " fzf 
 " Changed because ansible is now handling fzf config separately
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
