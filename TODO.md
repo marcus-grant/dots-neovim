@@ -1,13 +1,13 @@
 TODOs
 =====
 
-* [ ] Split configs into `./configs` dir & load all files there in order in `init.vim`
-* [ ] Gruvbox color schemes both light & dark
+* [ ] Fix `vim-markdown`'s handling of bold text *ie it should be able to show conceals that make it distinct*
 * [ ] ansible syntax
 * [ ] ansible snippets
 * [ ] ansible linting
 * [ ] ansible autocomplete
 * [ ] move all snippets into `./snips`
+    - Use coc-snippets instead
 * [ ] js prettier handler (and other langs if time)
 * [ ] typescript autocomplete
 * [ ] typescript linter
@@ -44,6 +44,8 @@ Planning
 Complete
 ========
 
+* [x] Gruvbox color schemes both light & dark
+* [x] Split configs into `./configs` dir & load all files there in order in `init.vim`
 * [x] Add TODOs.md `d7348be`
 * [x] Distraction free mode [goyo][14]
 * [x] Snippets [`Github: SirVer/ultisnips`][14]
