@@ -48,7 +48,7 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-p> :TmuxNavigatePrevious<cr>
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+" nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 " TODO: Max out height of current split
 "nnoremap <leader>_ <C-w>_
 "nnoremap <leader>| <C-w>|
