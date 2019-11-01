@@ -1,7 +1,9 @@
 TODOs
 =====
 
+* [ ] Add leader + '/' binding to toggle comments to make it more inline with default IDE hotkeys
 * [ ] Fix `vim-markdown`'s handling of bold text *ie it should be able to show conceals that make it distinct*
+* [ ] Add vim-grepper & do all the different searching tricks from [this]()
 * [ ] ansible syntax
 * [ ] ansible snippets
 * [ ] ansible linting
