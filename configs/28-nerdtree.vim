@@ -11,8 +11,9 @@
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 " set default width of nerdtree pane
-let g:NERDTreeWinSize=24
+let g:NERDTreeWinSize=12
 
 " ==== combine with tagbar
-nnoremap <leader>t :ToggleNERDTreeAndTagbar<cr>
+" nnoremap <leader>t :ToggleNERDTreeAndTagbar<cr>
+nnoremap <leader><tab> :ToggleNERDTreeAndTagbar<cr>
 
