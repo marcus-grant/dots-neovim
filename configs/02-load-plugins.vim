@@ -5,12 +5,16 @@
 call plug#begin("~/.config/nvim/plugged/")
 " Plugins list, ONLY USE SINGLE QUOTES for references
 
-" TMUX 
+" Session/Project/Tmux Management {{{
+"================================
+
+" TMUX
 "================================
 " vim-tmux-navigator to integrate panes with tmux
 Plug 'christoomey/vim-tmux-navigator'
+"}}}
 
-" Completion & Snippets 
+" Completion & Snippets {{{
 "================================
 " deoplete autocompletion
 if g:autocomplete_engine ==? 'deo'
@@ -23,6 +27,7 @@ endif
 Plug 'ervandew/supertab'
 
 " Snippets
+"================================
 " Implements a global var to determine if ultisnips should be used
 if g:snippet_manager ==? 'ultisnips'
   Plug 'sirver/ultisnips' "| Plug 'honza/vim-snippets'
@@ -31,6 +36,7 @@ elseif g:snippet_manager ==? 'neosnippet'
 endif
 
 " TernJS
+"================================
 " Disabled for now since it might be a bit silly to use both
 " Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': { 'mac': 'npm install -g tern', 'unix': 'npm install -g tern' }}
 if g:autocomplete_engine ==? 'deo'
@@ -47,9 +53,9 @@ endif
 if g:autocomplete_engine ==? 'deo'
     Plug 'zchee/deoplete-jedi'
 endif
+"}}}
 
-
-" UI 
+" UI {{{ 
 "================================
 " Status Line 
 if g:airline_enabled
@@ -58,18 +64,26 @@ if g:airline_enabled
   Plug 'vim-airline/vim-airline-themes'
 endif
 
-
 " Indents 
 "================================
 " Plug 'mkitt/tabline.vim'
 Plug 'yggdroot/indentLine'
 " Plug 'nathanaelkane/vim-indent-guides'
 
+" Color Schemes 
+"================================
+Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'vim-scripts/C64.vim'
+"}}}
 
-" Debuggers 
+" Debuggers {{{
 "========================
+"}}}
 
-" NERD 
+" NERD  {{{
 "================================
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -82,19 +96,25 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'majutsushi/tagbar'
 Plug 'pseewald/nerdtree-tagbar-combined'
 nmap <F7> :ToggleNERDTreeAndTagbar<CR>
+"}}}
 
-
-" fzf 
+" FZF {{{
+"================================
 " Changed because ansible is now handling fzf config separately
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'junegunn/fzf.vim'
 Plug '~/.local/share/fzf'
 Plug 'junegunn/fzf.vim'
+"}}}
 
-" Linting 
+" Linting {{{
+"================================
 " ALE - Asynchronous Lint Engine
 Plug 'w0rp/ale'
+"}}}
 
+" Language Plugins {{{
+"================================
 
 " Javascript Plugins
 "================================
@@ -122,36 +142,7 @@ Plug 'python-mode/python-mode', { 'branch': 'develop' }
 let g:pymode_python = 'python3'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
-
-" Ansible 
-"================================
-" syntax plugin for ansible supporting yaml, jinja2 & hostfiles.
-Plug 'pearofducks/ansible-vim'
-Plug 'stephpy/vim-yaml'
-
-
-" Git 
-"================================
-" fuGITive - Best git wrapper ever
-Plug 'tpope/vim-fugitive'
-
-" Vim-git - syntax highlighting for git integrators
-Plug 'tpope/vim-git'
-
-" Still experimenting 
-" Python virtual env workaround
-" Plug 'plytophogy/vim-virtualenv'
-
-" typescript 
-" 
-" syntax
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
-" general tooling incl. deoplete source
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-
-
-" markdown
+" MarkDown
 " ===============================
 
 " vim-pandoc 
@@ -184,25 +175,47 @@ endif
 
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 
-" Session Management
-"================================
-Plug 'tpope/vim-obsession'
 
-" Test Running 
+" Ansible 
+"================================
+" syntax plugin for ansible supporting yaml, jinja2 & hostfiles.
+Plug 'pearofducks/ansible-vim'
+Plug 'stephpy/vim-yaml'
+"}}}
+
+" Git (TODO: Move to a project manage category?){{{
+"================================
+" fuGITive - Best git wrapper ever
+Plug 'tpope/vim-fugitive'
+
+" Vim-git - syntax highlighting for git integrators
+Plug 'tpope/vim-git'
+"}}}
+
+" Still experimenting  {{{
+" Python virtual env workaround
+" Plug 'plytophogy/vim-virtualenv'
+
+" typescript  - TODO test and move to language section
+" 
+" syntax
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+" general tooling incl. deoplete source
+Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+"}}}
+
+" Test Running {{{
 "================================
 " vim-test
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
 
-" Color Schemes 
-"================================
-Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ayu-theme/ayu-vim'
-Plug 'vim-scripts/C64.vim'
-
+" BATS
+" ===============================
+Plug 'vim-scripts/bats.vim'
+"}}}
 
 " Initialize plugin system
 call plug#end()
