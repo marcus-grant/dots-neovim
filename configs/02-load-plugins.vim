@@ -7,6 +7,9 @@ call plug#begin("~/.config/nvim/plugged/")
 
 " Session/Project/Tmux Management {{{
 "================================
+" Sessions (Also used with tmux-resurrect)
+"================================
+Plug 'tpope/vim-obsession'
 
 " TMUX
 "================================
