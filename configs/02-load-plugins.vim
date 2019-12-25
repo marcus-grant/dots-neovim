@@ -84,6 +84,13 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " NERD commenter for better filetype comments
 Plug 'scrooloose/nerdcommenter'
 
+" Tagbar & NERDTree + Tagbar
+"================================
+Plug 'majutsushi/tagbar'
+Plug 'pseewald/nerdtree-tagbar-combined'
+nmap <F7> :ToggleNERDTreeAndTagbar<CR>
+
+
 " fzf 
 " Changed because ansible is now handling fzf config separately
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -187,12 +194,24 @@ endif
 
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 
+" Session Management
+"================================
+Plug 'tpope/vim-obsession'
+
 " Test Running 
 "================================
 " vim-test
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
 Plug 'radenling/vim-dispatch-neovim'
+
+" Color Schemes 
+"================================
+Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ayu-theme/ayu-vim'
+Plug 'vim-scripts/C64.vim'
 
 
 " Initialize plugin system

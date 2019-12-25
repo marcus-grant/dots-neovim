@@ -1,10 +1,13 @@
 TODOs
 =====
 
-* [ ] update coc configs like the repo [documentation](http://bit.ly/2L8xxbw) example shows
 * [ ] Sort PUM of COC correctly, most likely closest to tab
-* [ ] vim-test config init
+* [ ] update coc configs like the repo [documentation](http://bit.ly/2L8xxbw) example shows
 * [ ] Any other new extensions for coc like [these](http://bit.ly/2S0cYyl)
+* [ ] Add leader + '/' binding to toggle comments to make it more inline with default IDE hotkeys
+* [ ] vim-test config init
+* [ ] Fix `vim-markdown`'s handling of bold text *ie it should be able to show conceals that make it distinct*
+* [ ] Add vim-grepper & do all the different searching tricks from [this]()
 * [ ] ansible syntax
 * [ ] custom function to go to previously open buffer
 * [ ] ansible snippets
@@ -12,6 +15,7 @@ TODOs
 * [ ] ansible autocomplete
 * [ ] jest vim-test config
 * [ ] move all snippets into `./snips`
+    - Use coc-snippets instead
 * [ ] js prettier handler (and other langs if time)
 * [ ] typescript autocomplete
 * [ ] typescript linter
@@ -55,6 +59,7 @@ Planning
 Complete
 ========
 
+<<<<<<< HEAD
 * [x] Ctrl + / remap for NerdCommenter Toggle like [this](http://bit.ly/2S250VE)
     * Unfortunately I can't seem to get vim to recognize `<C-/>` like vscode uses
     * I recall reading something about that combination not working from stackO don't know why
@@ -64,6 +69,9 @@ Complete
 * [x] Disable SuperTab when COC active
 * [x] Jump to next error in coc using <leader>e and <leader>w
 * [x] Disable ALE when using COC (For Now Determine later if good)
+=======
+* [x] Gruvbox color schemes both light & dark
+>>>>>>> master
 * [x] Split configs into `./configs` dir & load all files there in order in `init.vim`
 * [x] Add TODOs.md `d7348be`
 * [x] Distraction free mode [goyo][14]
