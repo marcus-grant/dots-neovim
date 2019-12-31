@@ -24,9 +24,11 @@ endif
 " time-based color settings (change @ 5p 1700)
 if g:enable_time_basaed_colors
     set background=dark
+    colorscheme gruvbox
     if strftime("%H") > 6
       if strftime("%H") < 17
         set background=light
+        colorscheme PaperColor
       endif
     endif
 endif
