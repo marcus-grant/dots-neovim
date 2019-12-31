@@ -34,6 +34,11 @@ set foldlevel=99
 " Turn off conceal on cursor to make reading markdown entries easier
 " Taken from http://bit.ly/2GbSBLF
 set concealcursor=""
+
+" TODO verify that this works, but also tweak 
+set conceallevel=0
+autocmd BufRead,BufNewFile *.md set conceallevel=1
+
 " specify foldmethod by filetype
 autocmd BufRead,BufNewFile   *.sh,*.vim set foldmethod=marker
 

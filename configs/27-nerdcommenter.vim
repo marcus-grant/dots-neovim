@@ -13,3 +13,16 @@ let g:NERDTrimTrailingWhitespace = 1
 " From https://bit.ly/2kp8npv
 " Used to recognize & handle jsx comments
 let g:NERDCustomDelimiters = { 'javascript.jsx': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' } }
+
+" Extra Ctrl+/ comment toggle which many IDEs use
+nmap <leader>/ <Plug>NERDCommenterToggle<CR>
+vmap <leader>/ <Plug>NERDCommenterToggle<CR>
+
+nmap <leader>c<Space> <Plug>NERDCommenterToggle<CR>
+vmap <leader>c<Space> <Plug>NERDCommenterToggle<CR>
+
+nmap <C-\/> <Plug>NERDCommenterToggle<CR>
+vmap <C-\/> <Plug>NERDCommenterToggle<CR>
+nmap ?/# <Plug>NERDCommenterToggle<CR>
+vmap ?/# <Plug>NERDCommenterToggle<CR>
+

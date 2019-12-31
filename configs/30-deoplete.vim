@@ -1,5 +1,8 @@
 " Deoplete configs
 
+if g:autocomplete_engine ==? 'deo'
+" echo('deoplete in use')
+
 let g:deoplete#enable_at_startup = 1
 
 " Delay before querying, can help with slow responsiveness
@@ -82,3 +85,7 @@ if has('macunix')
   let g:python2_host_prog = '/usr/local/bin/python'
   let g:python3_host_prog = '/usr/local/bin/python3'
 endif
+
+" End of file-level enabler
+endif
+

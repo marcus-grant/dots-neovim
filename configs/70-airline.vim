@@ -11,11 +11,10 @@ let g:javascript_plugin_jsdoc = 1
 " enable working with flow
 let g:javascript_plugin_flow = 1
 " code folding based on syntax file of plugin
-set foldmethod=syntax
+" set foldmethod=syntax
 " for jsx....
 " enable jsx handling of js extension as well
 let g:jsx_ext_required = 0
-" concealing settings
 
 " change maxlinenr to nothing because I can't find unicode 0133 (3310?)
 " TODO: remove maxlinenr
@@ -33,8 +32,6 @@ let g:indentLine_char = '¦'
 " let g:indentLine_color_term = 244
 " let g:indentLine_color_gui = 244
 
-set conceallevel=1
-map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 " let g:javascript_conceal_function             = "ƒ"
 " let g:javascript_conceal_null                 = "ø"
 " let g:javascript_conceal_this                 = "@"

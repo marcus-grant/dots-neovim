@@ -5,6 +5,14 @@
 call plug#begin("~/.config/nvim/plugged/")
 " Plugins list, ONLY USE SINGLE QUOTES for references
 
+" SuperTab (for some reason needs early load) 
+"================================
+" Supertab to control completions
+if g:autocomplete_engine ==? 'deo'
+    Plug 'ervandew/supertab'
+endif
+
+
 " TMUX 
 "================================
 " vim-tmux-navigator to integrate panes with tmux
@@ -12,15 +20,17 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Completion & Snippets 
 "================================
+
 " deoplete autocompletion
 if g:autocomplete_engine ==? 'deo'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 elseif g:autocomplete_engine ==? 'coc'
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+
+        " {'branch': 'release'}
+        " {'tag': '*', 'do': { -> coc#util#install()}}
     " TODO keep going there's much more to this
 endif
-
-Plug 'ervandew/supertab'
 
 " Snippets
 " Implements a global var to determine if ultisnips should be used
@@ -93,7 +103,11 @@ Plug 'junegunn/fzf.vim'
 
 " Linting 
 " ALE - Asynchronous Lint Engine
-Plug 'w0rp/ale'
+" TODO determine if you lose anything desirable without ALE on COC
+" if g:autocomplete_engine ==? 'deo' || !(g:lint_engine ==? 'coc')
+if !(g:lint_engine ==? 'coc')
+    Plug 'dense-analysis/ale'
+endif
 
 
 " Javascript Plugins
@@ -143,12 +157,11 @@ Plug 'tpope/vim-git'
 " Plug 'plytophogy/vim-virtualenv'
 
 " typescript 
-" 
 " syntax
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 " general tooling incl. deoplete source
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+" Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 
 
 " markdown

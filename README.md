@@ -12,6 +12,8 @@ Overall Design of NeoVim Configs
 Keymaps
 -------
 
+### Misc.
+
 * Leader: (`,` key)
   * `<leader>l`: Toggle `vim-javascript` concealing features
   * `<leader>f`: Bring up fzf file search with command `Files`
@@ -19,7 +21,47 @@ Keymaps
 * Control `^SOMEKEY`
   * `^j`: during insert will expand ultisnips if detected by deoplete & will jump through snippet insertions when repeated
   * In the future, `supertab` can be used to defined smarter behavior for the tab key so everything can be managed there
-* Pane Controls
+
+### COC
+
+* <Tab> -> Next completion when in insert
+* <S-Tab> -> Previous completion when in insert
+* <cr> -> Complete completion in insert
+* <leader>gd -> coc-definition
+* <leader>gt -> coc-type-definition
+* <leader>gi -> coc-implementation
+* <leader>gr -> coc-references
+* <leader>e -> coc next error
+* <leader>q -> coc previous error
+
+### NERDCommenter
+
+* <leader>c<Space> -> toggle comments
+* ?/# -> a terminal keymap for Ctrl+/ is created to toggle comments using this sequence
+* <leader>/ -> toggle comments
+* Can't seem to find a way to bind the default 
+
+
+CoC
+---
+
+- Predominantly uses the default config on [CoC's repository][22]
+
+### Changes from Default CoC Repo's Config
+
+- `signcolumn=auto` so the sign column only draws when there's a sign to display
+
+
+### List of CoC Extensions
+
+- coc-tsserver
+- coc-tslint
+- coc-tslint-plugin
+- coc-eslint
+- coc-prettier
+- coc-css
+- coc-json
+- coc-yaml
 
 
 Folding
@@ -78,6 +120,11 @@ There are various configurations that are unfortunately only written down into t
   * Can be local paths and URLs
   * **NOTE** they **must** use absolute and prefixed schemes like so: `file:///home/euclio/markdown.css`
 
+
+FZF
+---
+
+* Maps - Looks up keymaps
 
 Javascript
 ----------
@@ -272,6 +319,7 @@ References
 19. [Github: ternjs/tern_for_vim][19]
 20. [TernJS: Reference Manual - Needed to configure local TernJs][20]
 21. [Github: simonweil/dotfiles (addresses smarttab for everything with tab & enter][21]
+22. [Github: neoclide/coc.nvim][22]
 
 
 [01]: https://github.com/rafi/vim-config "Github/rafi/vim-config: A good example of a config"
@@ -295,5 +343,6 @@ References
 [19]: https://github.com/ternjs/tern_for_vim "Github: ternjs/tern_for_vim"
 [20]: http://ternjs.net/doc/manual.html "TernJS: Reference Manual - Needed to configure local TernJs"
 [21]: https://github.com/simonweil/dotfiles/blob/master/nvimrc "Github: simonweil/dotfiles (addresses smarttab for everything with tab & enter"
+[22]: https://github.com/neoclide/coc.nvim "Github: neoclide/coc.nvim"
 
 [100]: http://bit.ly/2y0UkPU
