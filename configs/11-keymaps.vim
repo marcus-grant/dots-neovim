@@ -63,6 +63,8 @@ nnoremap -d dd
 " Clear the currently cursor'd line & go to insert mode (double c's)
 nnoremap -c ddO
 
+" Conceal level toggle
+map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 
 if has('nvim')
     " Make esc leave terminal mode
