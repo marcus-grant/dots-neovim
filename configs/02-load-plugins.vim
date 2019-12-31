@@ -157,12 +157,11 @@ Plug 'tpope/vim-git'
 " Plug 'plytophogy/vim-virtualenv'
 
 " typescript 
-" 
 " syntax
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 " general tooling incl. deoplete source
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+" Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 
 
 " markdown
