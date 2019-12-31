@@ -52,7 +52,7 @@ nmap <silent> <leader>gr <Plug>(coc-references)
 
 " Go to next / prev coc error
 nmap <silent> <leader>e <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>w <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>q <Plug>(coc-diagnostic-prev)
 
 
 
