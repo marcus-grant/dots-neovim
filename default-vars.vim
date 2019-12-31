@@ -33,6 +33,7 @@ let g:markdown_engine = 'vim-markdown' " which markdown engine plugin?
 let g:markdown_composer_enabled =  1 " enables markdown composer (huge plug, needs rust)
 " let g:autocomplete_engine = 'deo' " deo | coc
 let g:autocomplete_engine = 'coc' " deo | coc
+let g:lint_engine = 'ale' " coc | ale
 
 
 """ General editor variables
