@@ -1,18 +1,48 @@
 TODOs
 =====
 
-* [ ] Sort PUM of COC correctly, most likely closest to tab
+Current
+-------
+
 * [ ] update coc configs like the repo [documentation](http://bit.ly/2L8xxbw) example shows
 * [ ] Any other new extensions for coc like [these](http://bit.ly/2S0cYyl)
+* [ ] Try getting CoC & ALE to play nice together according to these hints/issues
+    * [ale github issue](https://github.com/dense-analysis/ale/issues/2017)
+    * [reddit coc ale thread](https://www.reddit.com/r/vim/comments/bs95ud/announcement_changing_default_linting_options_for/eom60ub?utm_source=share&utm_medium=web2x)
+* [ ] Open `Session.vim` if it exists & create if doesn't exist
+    * Try using the `QuitPre` command
+    * Use it to check for remaining open buffers/splits
+    * If none left close the session and delete Session.vim
+* [ ] New FZF/RG/CoC Bindings
+    * [ ] `C-p` to bring up `Files` function to search filenames
+    * [ ] `Shift+C-p` to bring up `Commands`? function to search vim commands to run
+    * [ ] `C-f` to bring up `Rg` function to search strings of project
+    * [ ] `F2` for coc renaming elements of code
+    * [ ] `gd` to go-to definition in coc
+    * [x] `C-/` in conjuction with OS rebind to spit out `?/#` sequence that toggles comments
+        * Update alacritty's dotfiles to include these keybindings
 * [ ] Add leader + '/' binding to toggle comments to make it more inline with default IDE hotkeys
 * [ ] vim-test config init
+* [ ] `coc-settings.json` link while keeping the tracked config in dot repo
+    * this includes link from `role-mydotfiles` to `~/.config/coc/coc-settings.json`
 * [ ] Fix `vim-markdown`'s handling of bold text *ie it should be able to show conceals that make it distinct*
 * [ ] Add vim-grepper & do all the different searching tricks from [this]()
+* [ ] Sort PUM of COC correctly, most likely closest to tab
+* [ ] Consider either vim-test or coc extensions to display and run tests
+
+Planning
+--------
+
 * [ ] ansible syntax
+* [ ] Python IDE features like [this](https://www.vimfromscratch.com/articles/vim-for-python/)
+* [ ] Consider `coc-pairs` plugin
+* [ ] Find way to make ALE work alongside CoC either by filetype or ...?
 * [ ] custom function to go to previously open buffer
 * [ ] ansible snippets
 * [ ] ansible linting
 * [ ] ansible autocomplete
+* [ ] add if block around ALE config file to stop reading it if not used
+* [ ] Remove ALE entirely?
 * [ ] jest vim-test config
 * [ ] move all snippets into `./snips`
     - Use coc-snippets instead
@@ -26,6 +56,12 @@ TODOs
 * [ ] coc-snippets
 * [ ] CoC preview window for each completion - *(might need newer nvim ver.)*
 * [ ] Close preivew window when CoC completion done
+
+
+Future
+------
+
+* [ ] Refactor keymaps into one keymaps file
 * [ ] Auto fold h2 & lower
 * [ ] Block Editing
 * [ ] Was disabling ALE on COC a good choice?
@@ -33,10 +69,6 @@ TODOs
 * [ ] Custom rg/fzf fd/fzf functions to search all notes & all code
 * [ ] Indentation grids
 * [ ] graphQL highlighting
-
-Planning
-========
-
 * [ ] PlatformIO IDE features
     * Might be enough to just have a few C/C++/Rust shortcuts + cli utility
 * [ ] Markdown linting Grammar & Spelling *(write-good?)*
@@ -56,10 +88,11 @@ Planning
 * [ ] HTML and scope chars surrounds
 * [ ] RGB highlighting for color codes
 
-Complete
-========
 
-<<<<<<< HEAD
+Complete
+--------
+
+* [x] Disable ALE when CoC is running
 * [x] Ctrl + / remap for NerdCommenter Toggle like [this](http://bit.ly/2S250VE)
     * Unfortunately I can't seem to get vim to recognize `<C-/>` like vscode uses
     * I recall reading something about that combination not working from stackO don't know why
@@ -69,9 +102,7 @@ Complete
 * [x] Disable SuperTab when COC active
 * [x] Jump to next error in coc using <leader>e and <leader>w
 * [x] Disable ALE when using COC (For Now Determine later if good)
-=======
 * [x] Gruvbox color schemes both light & dark
->>>>>>> master
 * [x] Split configs into `./configs` dir & load all files there in order in `init.vim`
 * [x] Add TODOs.md `d7348be`
 * [x] Distraction free mode [goyo][14]

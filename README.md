@@ -32,13 +32,36 @@ Keymaps
 * <leader>gi -> coc-implementation
 * <leader>gr -> coc-references
 * <leader>e -> coc next error
-* <leader>w -> coc previous error
+* <leader>q -> coc previous error
 
 ### NERDCommenter
 
 * <leader>c<Space> -> toggle comments
+* ?/# -> a terminal keymap for Ctrl+/ is created to toggle comments using this sequence
 * <leader>/ -> toggle comments
 * Can't seem to find a way to bind the default 
+
+
+CoC
+---
+
+- Predominantly uses the default config on [CoC's repository][22]
+
+### Changes from Default CoC Repo's Config
+
+- `signcolumn=auto` so the sign column only draws when there's a sign to display
+
+
+### List of CoC Extensions
+
+- coc-tsserver
+- coc-tslint
+- coc-tslint-plugin
+- coc-eslint
+- coc-prettier
+- coc-css
+- coc-json
+- coc-yaml
 
 
 Folding
@@ -296,6 +319,7 @@ References
 19. [Github: ternjs/tern_for_vim][19]
 20. [TernJS: Reference Manual - Needed to configure local TernJs][20]
 21. [Github: simonweil/dotfiles (addresses smarttab for everything with tab & enter][21]
+22. [Github: neoclide/coc.nvim][22]
 
 
 [01]: https://github.com/rafi/vim-config "Github/rafi/vim-config: A good example of a config"
@@ -319,5 +343,6 @@ References
 [19]: https://github.com/ternjs/tern_for_vim "Github: ternjs/tern_for_vim"
 [20]: http://ternjs.net/doc/manual.html "TernJS: Reference Manual - Needed to configure local TernJs"
 [21]: https://github.com/simonweil/dotfiles/blob/master/nvimrc "Github: simonweil/dotfiles (addresses smarttab for everything with tab & enter"
+[22]: https://github.com/neoclide/coc.nvim "Github: neoclide/coc.nvim"
 
 [100]: http://bit.ly/2y0UkPU
