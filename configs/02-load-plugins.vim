@@ -25,7 +25,10 @@ Plug 'christoomey/vim-tmux-navigator'
 if g:autocomplete_engine ==? 'deo'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 elseif g:autocomplete_engine ==? 'coc'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+
+        " {'branch': 'release'}
+        " {'tag': '*', 'do': { -> coc#util#install()}}
     " TODO keep going there's much more to this
 endif
 
@@ -101,8 +104,9 @@ Plug 'junegunn/fzf.vim'
 " Linting 
 " ALE - Asynchronous Lint Engine
 " TODO determine if you lose anything desirable without ALE on COC
-if g:autocomplete_engine ==? 'deo'
-    Plug 'w0rp/ale'
+" if g:autocomplete_engine ==? 'deo' || !(g:lint_engine ==? 'coc')
+if !(g:lint_engine ==? 'coc')
+    Plug 'dense-analysis/ale'
 endif
 
 
