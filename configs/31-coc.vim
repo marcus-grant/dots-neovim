@@ -22,7 +22,7 @@ set updatetime=300 " milliseconds
 " Less time for cursor updates
 set shortmess+=c
 " always show signcolumns
-set signcolumn=yes
+set signcolumn=auto
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
