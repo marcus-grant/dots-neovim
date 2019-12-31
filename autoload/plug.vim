@@ -184,8 +184,8 @@ function! s:define_commands()
   endif
   if !has('nvim')
     \ && (has('win32') || has('win32unix'))
-    \ && (!has('multi_byte') || !has('iconv'))
-    return s:err('Vim needs +iconv, +multi_byte features on Windows to run shell commands.')
+    \ && !has('multi_byte')
+    return s:err('Vim needs +multi_byte feature on Windows to run shell commands. Enable +iconv for best results.')
   endif
   command! -nargs=* -bar -bang -complete=customlist,s:names PlugInstall call s:install(<bang>0, [<f-args>])
   command! -nargs=* -bar -bang -complete=customlist,s:names PlugUpdate  call s:update(<bang>0, [<f-args>])
@@ -400,14 +400,19 @@ if s:is_win
   endfunction
 
   " Copied from fzf
-  let s:codepage = libcallnr('kernel32.dll', 'GetACP', 0)
   function! s:wrap_cmds(cmds)
-    return map([
+    let cmds = [
       \ '@echo off',
       \ 'setlocal enabledelayedexpansion']
     \ + (type(a:cmds) == type([]) ? a:cmds : [a:cmds])
-    \ + ['endlocal'],
-    \ printf('iconv(v:val."\r", "%s", "cp%d")', &encoding, s:codepage))
+    \ + ['endlocal']
+    if has('iconv')
+      if !exists('s:codepage')
+        let s:codepage = libcallnr('kernel32.dll', 'GetACP', 0)
+      endif
+      return map(cmds, printf('iconv(v:val."\r", "%s", "cp%d")', &encoding, s:codepage))
+    endif
+    return map(cmds, 'v:val."\r"')
   endfunction
 
   function! s:batchfile(cmd)
@@ -873,9 +878,7 @@ function! s:bang(cmd, ...)
     "        but it won't work on Windows.
     let cmd = a:0 ? s:with_cd(a:cmd, a:1) : a:cmd
     if s:is_win
-      let batchfile = tempname().'.bat'
-      call writefile(["@echo off\r", cmd . "\r"], batchfile)
-      let cmd = s:shellesc(batchfile)
+      let [batchfile, cmd] = s:batchfile(cmd)
     endif
     let g:_plug_bang = (s:is_win && has('gui_running') ? 'silent ' : '').'!'.escape(cmd, '#!%')
     execute "normal! :execute g:_plug_bang\<cr>\<cr>"
@@ -1270,12 +1273,8 @@ function! s:spawn(name, cmd, opts)
   let job = { 'name': a:name, 'running': 1, 'error': 0, 'lines': [''],
             \ 'new': get(a:opts, 'new', 0) }
   let s:jobs[a:name] = job
-  let cmd = has_key(a:opts, 'dir') ? s:with_cd(a:cmd, a:opts.dir) : a:cmd
-  if !empty(job.batchfile)
-    call writefile(["@echo off\r", cmd . "\r"], job.batchfile)
-    let cmd = s:shellesc(job.batchfile)
-  endif
-  let argv = add(s:is_win ? ['cmd', '/c'] : ['sh', '-c'], cmd)
+  let cmd = has_key(a:opts, 'dir') ? s:with_cd(a:cmd, a:opts.dir, 0) : a:cmd
+  let argv = s:is_win ? ['cmd', '/s', '/c', '"'.cmd.'"'] : ['sh', '-c', cmd]
 
   if s:nvim
     call extend(job, {
@@ -2107,9 +2106,7 @@ function! s:system(cmd, ...)
     let [sh, shellcmdflag, shrd] = s:chsh(1)
     let cmd = a:0 > 0 ? s:with_cd(a:cmd, a:1) : a:cmd
     if s:is_win
-      let batchfile = tempname().'.bat'
-      call writefile(["@echo off\r", cmd . "\r"], batchfile)
-      let cmd = s:shellesc(batchfile)
+      let [batchfile, cmd] = s:batchfile(cmd)
     endif
     return system(cmd)
   finally
@@ -2296,7 +2293,7 @@ function! s:upgrade()
   let new = tmp . '/plug.vim'
 
   try
-    let out = s:system(printf('git clone --depth 1 %s %s', s:shellesc(s:plug_src), s:shellesc(tmp)))
+    let out = s:system(printf('git clone --depth 1 %s %s', plug#shellescape(s:plug_src), plug#shellescape(tmp)))
     if v:shell_error
       return s:err('Error upgrading vim-plug: '. out)
     endif
@@ -2491,9 +2488,11 @@ function! s:diff()
     call s:append_ul(2, origin ? 'Pending updates:' : 'Last update:')
     for [k, v] in plugs
       let range = origin ? '..origin/'.v.branch : 'HEAD@{1}..'
-      let cmd = 'git log --graph --color=never '.join(map(['--pretty=format:%x01%h%x01%d%x01%s%x01%cr', range], 's:shellesc(v:val)'))
+      let cmd = 'git log --graph --color=never '
+      \ . (s:git_version_requirement(2, 10, 0) ? '--no-show-signature ' : '')
+      \ . join(map(['--pretty=format:%x01%h%x01%d%x01%s%x01%cr', range], 'plug#shellescape(v:val)'))
       if has_key(v, 'rtp')
-        let cmd .= ' -- '.s:shellesc(v.rtp)
+        let cmd .= ' -- '.plug#shellescape(v.rtp)
       endif
       let diff = s:system_chomp(cmd, v.dir)
       if !empty(diff)
