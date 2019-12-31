@@ -23,4 +23,6 @@ vmap <leader>c<Space> <Plug>NERDCommenterToggle<CR>
 
 nmap <C-\/> <Plug>NERDCommenterToggle<CR>
 vmap <C-\/> <Plug>NERDCommenterToggle<CR>
+nmap ?/# <Plug>NERDCommenterToggle<CR>
+vmap ?/# <Plug>NERDCommenterToggle<CR>
 
