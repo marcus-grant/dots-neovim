@@ -4,12 +4,12 @@ TODOs
 Current
 -------
 
-* [ ] hotfix: vim plug errors, probably from bad merge
 * [ ] update coc configs like the repo [documentation](http://bit.ly/2L8xxbw) example shows
 * [ ] Any other new extensions for coc like [these](http://bit.ly/2S0cYyl)
 * [ ] Try getting CoC & ALE to play nice together according to these hints/issues
     * [ale github issue](https://github.com/dense-analysis/ale/issues/2017)
     * [reddit coc ale thread](https://www.reddit.com/r/vim/comments/bs95ud/announcement_changing_default_linting_options_for/eom60ub?utm_source=share&utm_medium=web2x)
+* [ ] fugitive view diffs from stage view & stage only patches keymaps/funcs
 * [ ] Open `Session.vim` if it exists & create if doesn't exist
     * Try using the `QuitPre` command
     * Use it to check for remaining open buffers/splits
@@ -93,6 +93,7 @@ Future
 Complete
 --------
 
+* [x] hotfix: vim plug errors, probably from bad merge
 * [x] Disable ALE when CoC is running
 * [x] Ctrl + / remap for NerdCommenter Toggle like [this](http://bit.ly/2S250VE)
     * Unfortunately I can't seem to get vim to recognize `<C-/>` like vscode uses
