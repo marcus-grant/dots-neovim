@@ -4,6 +4,7 @@ TODOs
 Current
 -------
 
+* [ ] hotfix: vim plug errors, probably from bad merge
 * [ ] update coc configs like the repo [documentation](http://bit.ly/2L8xxbw) example shows
 * [ ] Any other new extensions for coc like [these](http://bit.ly/2S0cYyl)
 * [ ] Try getting CoC & ALE to play nice together according to these hints/issues
