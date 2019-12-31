@@ -63,6 +63,18 @@ nnoremap -d dd
 " Clear the currently cursor'd line & go to insert mode (double c's)
 nnoremap -c ddO
 
+" COC Keymaps
+" Remap keys for gotos g + (d)ef / (t)ype / (i)mplement / (r)ef
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gt <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
+
+" Go to next / prev coc error
+nmap <silent> <leader>e <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>q <Plug>(coc-diagnostic-prev)
+
+
 " Conceal level toggle
 map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 

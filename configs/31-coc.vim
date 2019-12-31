@@ -44,16 +44,6 @@ inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Use <cr> to confirm completion
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Remap keys for gotos g + (d)ef / (t)ype / (i)mplement / (r)ef
-nmap <silent> <leader>gd <Plug>(coc-definition)
-nmap <silent> <leader>gt <Plug>(coc-type-definition)
-nmap <silent> <leader>gi <Plug>(coc-implementation)
-nmap <silent> <leader>gr <Plug>(coc-references)
-
-" Go to next / prev coc error
-nmap <silent> <leader>e <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>q <Plug>(coc-diagnostic-prev)
-
 
 
 " Untested options from http://bit.ly/2WHw2lB
