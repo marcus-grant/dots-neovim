@@ -32,7 +32,6 @@ let g:indentLine_char = '¦'
 " let g:indentLine_color_term = 244
 " let g:indentLine_color_gui = 244
 
-set conceallevel=1
 " let g:javascript_conceal_function             = "ƒ"
 " let g:javascript_conceal_null                 = "ø"
 " let g:javascript_conceal_this                 = "@"
