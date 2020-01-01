@@ -116,7 +116,13 @@ nmap <F7> :ToggleNERDTreeAndTagbar<CR>
 " Changed because ansible is now handling fzf config separately
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'junegunn/fzf.vim'
-Plug '~/.local/share/fzf'
+if isdirectory('~/.local/share/fzf')
+    " default arch setup
+    Plug '~/.local/share/fzf'
+elseif filereadable('/usr/share/doc/fzf/examples/fzf.vim')
+    " otherwise use the debian apt installed fzf
+    source /usr/share/doc/fzf/examples/fzf.vim
+endif
 Plug 'junegunn/fzf.vim'
 "}}}
 
