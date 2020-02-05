@@ -17,8 +17,6 @@ let g:coc_global_extensions = [
 set hidden
 " Better display for messages
 set cmdheight=2 " TODO come back to this if annoyed by 2 height it's recommended
-" Set the update time for cursor hold for autocomplete
-set updatetime=300 " milliseconds
 " Less time for cursor updates
 set shortmess+=c
 " always show signcolumns
@@ -44,7 +42,9 @@ inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " Use <cr> to confirm completion
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-
+" Performance Section
+" Set the update time for cursor hold for autocomplete
+set updatetime=600 " milliseconds
 
 " Untested options from http://bit.ly/2WHw2lB
 " ===========================================
