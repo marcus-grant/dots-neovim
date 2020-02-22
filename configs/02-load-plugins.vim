@@ -60,6 +60,9 @@ endif
 " TODO I'm not sure this works, it's inactive and might be slow, investigate
 " Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 
+" Language Support
+" ===============================
+Plug 'sheerun/vim-polyglot'
 
 " Python Completion 
 "================================
@@ -143,9 +146,10 @@ endif
 " Improved JS & JSX support
 " load only for *.js & *.jsx extensions
 " TODO: accomplish some kind of lazy loading for this plugin for JS & JSX
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
-Plug 'jparise/vim-graphql'
+" NOTE: Marked for removal if polyglot works
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'jparise/vim-graphql'
 
 " Go 
 "================================
@@ -168,8 +172,9 @@ Plug 'python-mode/python-mode', { 'branch': 'develop' }
 " Ansible 
 "================================
 " syntax plugin for ansible supporting yaml, jinja2 & hostfiles.
-Plug 'pearofducks/ansible-vim'
-Plug 'stephpy/vim-yaml'
+" NOTE: Marked for deletion if polyglot works
+" Plug 'pearofducks/ansible-vim'
+" Plug 'stephpy/vim-yaml'
 
 
 " Git 
@@ -186,10 +191,11 @@ Plug 'tpope/vim-git'
 
 " typescript 
 " syntax
-" Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
-" general tooling incl. deoplete source
+" NOTE: marked for deletion if polyglot works
 " Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+" Plug 'leafgarland/typescript-vim'
+" Plug 'HerringtonDarkholme/yats.vim'
+" general tooling incl. deoplete source
 
 
 " markdown
@@ -229,8 +235,9 @@ Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 " Ansible 
 "================================
 " syntax plugin for ansible supporting yaml, jinja2 & hostfiles.
-Plug 'pearofducks/ansible-vim'
-Plug 'stephpy/vim-yaml'
+" NOTE: marked for deletion if polyglot works
+" Plug 'pearofducks/ansible-vim'
+" Plug 'stephpy/vim-yaml'
 "}}}
 
 " Git (TODO: Move to a project manage category?){{{
@@ -249,10 +256,11 @@ Plug 'tpope/vim-git'
 " typescript  - TODO test and move to language section
 " 
 " syntax
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
+" NOTE: marked for deletion if polyglot works
+" Plug 'leafgarland/typescript-vim'
+" Plug 'HerringtonDarkholme/yats.vim'
 " general tooling incl. deoplete source
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
+" Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 "}}}
 
 " Test Running {{{
