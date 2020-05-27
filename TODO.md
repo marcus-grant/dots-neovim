@@ -3,12 +3,25 @@ TODOs
 
 Current
 -------
+
+* [ ] These below are interrelated with problems between coc / ale / pythonmode when editing in python
+* [ ] remove: python-mode - no need for all those features add as needed
+* [ ] fix: (related to below) ALE deployament problems
+* [ ] fix: coc for python development, namely jedi timeouts and autocomplete
+* [ ] Try using `ale_fixers` with prettier and yapf
 * [ ] fix `:Rg` so it doesn't search ignores (https://bit.ly/2sfBCTl)
+* [ ] feat: proper symbolic folding (function blocks, tag blocks, classes,etc)
 * [ ] update coc configs like the repo [documentation](http://bit.ly/2L8xxbw) example shows
+* [ ] vim-test config init
 * [ ] Any other new extensions for coc like [these](http://bit.ly/2S0cYyl)
 * [ ] Try getting CoC & ALE to play nice together according to these hints/issues
     * [ale github issue](https://github.com/dense-analysis/ale/issues/2017)
     * [reddit coc ale thread](https://www.reddit.com/r/vim/comments/bs95ud/announcement_changing_default_linting_options_for/eom60ub?utm_source=share&utm_medium=web2x)
+
+Planning
+--------
+
+* [ ] Consider [vista.vim][03] for combined filetree & tagbar view for far better tag displays than default ctags
 * [ ] fugitive view diffs from stage view & stage only patches keymaps/funcs
 * [ ] Open `Session.vim` if it exists & create if doesn't exist
     * Try using the `QuitPre` command
@@ -22,23 +35,22 @@ Current
     * [ ] `gd` to go-to definition in coc
     * [x] `C-/` in conjuction with OS rebind to spit out `?/#` sequence that toggles comments
         * Update alacritty's dotfiles to include these keybindings
+* [ ] Add python mode features as they're needed, ongoing, add to this task later
 * [ ] Add leader + '/' binding to toggle comments to make it more inline with default IDE hotkeys
-* [ ] vim-test config init
 * [ ] `coc-settings.json` link while keeping the tracked config in dot repo
     * this includes link from `role-mydotfiles` to `~/.config/coc/coc-settings.json`
 * [ ] Fix `vim-markdown`'s handling of bold text *ie it should be able to show conceals that make it distinct*
 * [ ] Add vim-grepper & do all the different searching tricks from [this]()
 * [ ] Sort PUM of COC correctly, most likely closest to tab
 * [ ] Consider either vim-test or coc extensions to display and run tests
-
-Planning
---------
-
 * [ ] ansible syntax
 * [ ] Python IDE features like [this](https://www.vimfromscratch.com/articles/vim-for-python/)
 * [ ] Consider `coc-pairs` plugin
 * [ ] Find way to make ALE work alongside CoC either by filetype or ...?
 * [ ] custom function to go to previously open buffer
+* [ ] Better folding logic
+    * should work for markdown headings
+    * should work on javascript functions and closures
 * [ ] ansible snippets
 * [ ] ansible linting
 * [ ] ansible autocomplete
@@ -67,6 +79,7 @@ Future
 * [ ] Block Editing
 * [ ] Was disabling ALE on COC a good choice?
 * [ ] Was disabling SuperTab on COC good?
+* [ ] Consider [numiras/semshi][02] for better syntax highlight?
 * [ ] Custom rg/fzf fd/fzf functions to search all notes & all code
 * [ ] Indentation grids
 * [ ] graphQL highlighting
@@ -88,11 +101,14 @@ Future
 * [ ] Emmet for static HTML, templating & maybe jsx
 * [ ] HTML and scope chars surrounds
 * [ ] RGB highlighting for color codes
+* [ ] [vim-pythonsense][04] for better vim text objects & motions in python
 
 
 Complete
 --------
 
+* [x] Make helper commands `GruvDark`, `GruvLight`, `PaperLight`, `PaperDark` for the 4 variants of the two most used schemes
+* [x] Make C64 colorscheme command
 * [x] hotfix: vim plug errors, probably from bad merge
 * [x] Disable ALE when CoC is running
 * [x] Ctrl + / remap for NerdCommenter Toggle like [this](http://bit.ly/2S250VE)
@@ -130,3 +146,6 @@ References
 1. [Steve Losh - Advanced Folding][01]
 
 [01]: http://learnvimscriptthehardway.stevelosh.com/chapters/49.html "Steve Losh - Advanced Folding"
+[02]: https://github.com/numirias/semshi "Github: numiras/semshi - syntax highlighting"
+[03]: https://github.com/liuchengxu/vista.vim "Github:liuchengxu/vista.vim - LSP symbols & tabgs in tag bar"
+[04]: https://github.com/jeetsukumaran/vim-pythonsense "vim-pythonsense repo"
