@@ -133,10 +133,11 @@ Plug 'junegunn/fzf.vim'
 "================================
 " ALE - Asynchronous Lint Engine
 " TODO determine if you lose anything desirable without ALE on COC
+" TODO also determine if ALE & COC can run together without issue
 " if g:autocomplete_engine ==? 'deo' || !(g:lint_engine ==? 'coc')
-if !(g:lint_engine ==? 'coc')
+" if !(g:lint_engine ==? 'coc')
     Plug 'dense-analysis/ale'
-endif
+" endif
 
 " Language Plugins {{{
 "================================
@@ -163,10 +164,11 @@ Plug 'sebdah/vim-delve'
 
 " Python 
 "================================
+" TODO: Removing and replacing with smaller plugins/configs 
 " python-mode is the swiss army knif of vim development of python.
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
-let g:pymode_python = 'python3'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
+" Plug 'python-mode/python-mode', { 'branch': 'develop' }
+" let g:pymode_python = 'python3'
+" Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
 
 " Ansible 

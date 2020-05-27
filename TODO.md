@@ -4,6 +4,7 @@ TODOs
 Current
 -------
 
+* [ ] Version unlock coc extension `coc-python` from version `1.2.9`
 * [ ] These below are interrelated with problems between coc / ale / pythonmode when editing in python
 * [ ] remove: python-mode - no need for all those features add as needed
 * [ ] fix: (related to below) ALE deployament problems
