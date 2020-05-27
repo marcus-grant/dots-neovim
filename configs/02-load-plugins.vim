@@ -163,10 +163,11 @@ Plug 'sebdah/vim-delve'
 
 " Python 
 "================================
+" TODO: Removing and replacing with smaller plugins/configs 
 " python-mode is the swiss army knif of vim development of python.
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
-let g:pymode_python = 'python3'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
+" Plug 'python-mode/python-mode', { 'branch': 'develop' }
+" let g:pymode_python = 'python3'
+" Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
 
 " Ansible 

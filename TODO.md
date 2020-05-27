@@ -3,6 +3,13 @@ TODOs
 
 Current
 -------
+
+* [ ] Version unlock coc extension `coc-python` from version `1.2.9`
+* [ ] These below are interrelated with problems between coc / ale / pythonmode when editing in python
+* [ ] remove: python-mode - no need for all those features add as needed
+* [ ] fix: (related to below) ALE deployament problems
+* [ ] fix: coc for python development, namely jedi timeouts and autocomplete
+* [ ] Try using `ale_fixers` with prettier and yapf
 * [ ] fix `:Rg` so it doesn't search ignores (https://bit.ly/2sfBCTl)
 * [ ] update coc configs like the repo [documentation](http://bit.ly/2L8xxbw) example shows
 * [ ] Any other new extensions for coc like [these](http://bit.ly/2S0cYyl)
