@@ -12,6 +12,7 @@ let g:coc_global_extensions = [
             \ 'coc-css',
             \ 'coc-json',
             \ 'coc-yaml',
+            \ 'coc-python@1.2.9',
             \ ]
 " if hidden isnt set, text edit might fail
 set hidden

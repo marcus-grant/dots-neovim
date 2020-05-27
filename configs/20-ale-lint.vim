@@ -22,6 +22,7 @@ let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'javascript.jsx': ['eslint'],
 \  'typescript': ['tslint'],
+\  'python': ['flake8', 'pylint'],
 \}
 " enable filetypes using the associated linting program
 " Recently changed to test if using npx enforces local linters instead of global

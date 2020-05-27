@@ -133,10 +133,11 @@ Plug 'junegunn/fzf.vim'
 "================================
 " ALE - Asynchronous Lint Engine
 " TODO determine if you lose anything desirable without ALE on COC
+" TODO also determine if ALE & COC can run together without issue
 " if g:autocomplete_engine ==? 'deo' || !(g:lint_engine ==? 'coc')
-if !(g:lint_engine ==? 'coc')
+" if !(g:lint_engine ==? 'coc')
     Plug 'dense-analysis/ale'
-endif
+" endif
 
 " Language Plugins {{{
 "================================
