@@ -4,6 +4,9 @@ TODOs
 Current
 -------
 
+* [ ] Make default/fallback fold method by indent
+* [ ] Custom fodling defaults to fold funcion signatures by syntax in JS & TS
+* [ ] Custom starting fold by headers in markdown
 * [ ] Version unlock coc extension `coc-python` from version `1.2.9`
 * [ ] These below are interrelated with problems between coc / ale / pythonmode when editing in python
 * [ ] remove: python-mode - no need for all those features add as needed
