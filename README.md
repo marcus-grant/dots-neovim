@@ -1,8 +1,7 @@
-meVim
-=====
+NeoVIm Dotfiles
+===============
 
-*My personal configurations for NeoVim, which by contrast to my vanilla vim config is a fully featured IDE for Python, Javascript, C++, Platform IO, Shell, Rust & Go*
-
+NeoVIm is my go to IDE, yes IDE not text editor. For quick and dirty editing of text 
 
 Overall Design of NeoVim Configs
 --------------------------------
