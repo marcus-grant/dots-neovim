@@ -8,6 +8,8 @@
 -- ]]
 
 
+print('Hello from plugins module')
+
 return require('packer').startup(function()
 	-- Packer to manage itself.
 	use 'wbthomason/packer.nvim'
@@ -16,6 +18,13 @@ return require('packer').startup(function()
 	-- Many plugins will use them to not reuse code.
 	-- Think of it like LoDash in JS.
 	use 'nvim-lua/plenary.nvim'
+
+	-- Telescope, a more integrated fuzzy finder than fzf
+	-- Trying it out for now, maybe I'll go back to fzf
+	use {
+		'nvim-telescope/telescope.nvim',
+		requires = {{'nvim-lua/plenary.nvim'}}
+	}
 
 	-- Colorschemes (only lua based ones).
 	-- Lush gets used since it's easier to define colorschemes.
