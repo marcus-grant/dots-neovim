@@ -1,9 +1,10 @@
 -- Default options
 -- Mainly generic and global editor settings during default launches
 
-print("hello from defaults.lua")
+print("Defaults module loaded")
 
 vim.wo.number				= true
+vim.o.expandtab				= true
 vim.o.smarttab				= true
 vim.o.smartindent			= true
 vim.o.tabstop				= 4
