@@ -7,3 +7,21 @@
 -- No other logic or configuration should get used here.
 -- ]]
 print("Keymap loaded")
+-- Set these default options to be used in the mapping functions
+local opts = { noremap = true, silent = true }
+local terms_opts = { silent = true } 
+-- Shorten the function name and pull out its reference from vim.api
+local keymap = vim.api.nvim_set_keymap
+-- Modes string
+--     normal		= 'n'
+--     insert		= 'i'
+--     visual		= 'v'
+--     visual_block = 'x'
+--     terminal		= 't'
+--     command		= 'c'
+-- First map the leader key (spacebar)
+vim.g.mapleader = ' '
+-- Normal Mode
+-- ===========
+-- LoadConfigs() as <leader>rc
+keymap('n', '<leader>rc', ':lua LoadConfigs()<CR>', opts)

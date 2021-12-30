@@ -13,6 +13,7 @@
 nvim_modules = {
 	'plugins',
 	'defaults',
+	'keymap',
 }
 
 function _G.LoadConfigs()
