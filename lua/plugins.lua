@@ -8,7 +8,7 @@
 -- ]]
 
 
-print('Hello from plugins module')
+print("Module: Plugins manager loaded")
 
 return require('packer').startup(function()
 	-- Packer to manage itself.
