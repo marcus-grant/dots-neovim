@@ -59,3 +59,12 @@ keymap('n', '<leader>w=', '<C-w><Char-0x3D><CR>', opts)
 -- Navigate buffers with <C+(b/n)>
 keymap('n', '<C-b>', ':bprevious<CR>', opts)
 keymap('n', '<C-n>', ':bnext<CR>', opts)
+
+
+-- Visual
+-- ======
+
+-- Indent repeatedly while in visual & stay there
+keymap('v', '<', '<gv', opts)
+keymap('v', '>', '>gv', opts)
+
