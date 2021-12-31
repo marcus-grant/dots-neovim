@@ -10,7 +10,8 @@ print("Module: Keymap loaded")
 
 -- Set these default options to be used in the mapping functions
 local opts = { noremap = true, silent = true }
-local terms_opts = { silent = true } 
+local term_opts = { silent = true }
+
 
 -- Shorten the function name and pull out its reference from vim.api
 local keymap = vim.api.nvim_set_keymap
@@ -57,6 +58,7 @@ keymap('n', '<leader>wl', '4<C-w><Char-0x3E><CR>', opts)
 keymap('n', '<leader>w=', '<C-w><Char-0x3D><CR>', opts)
 
 -- Navigate buffers with <C+(b/n)>
+-- TODO <C-n> is important
 keymap('n', '<C-b>', ':bprevious<CR>', opts)
 keymap('n', '<C-n>', ':bnext<CR>', opts)
 
@@ -68,3 +70,24 @@ keymap('n', '<C-n>', ':bnext<CR>', opts)
 keymap('v', '<', '<gv', opts)
 keymap('v', '>', '>gv', opts)
 
+
+-- Visual Block
+-- ============
+
+
+-- Terminal
+-- ========
+
+-- Better Terminal navigation Ctrl+hjkl
+keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+
+-- Command
+-- =======
+
+-- Navigate menus in command view
+keymap("c", "<C-j>",  'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true } )
+keymap("c", "<C-k>",  'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true } )
