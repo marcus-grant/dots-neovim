@@ -62,6 +62,10 @@ keymap('n', '<leader>w=', '<C-w><Char-0x3D><CR>', opts)
 keymap('n', '<C-b>', ':bprevious<CR>', opts)
 keymap('n', '<C-n>', ':bnext<CR>', opts)
 
+-- Splits
+keymap('n', '<leader><Char-0x5C>', ':vs<CR>', opts)
+keymap('n', '<leader><Char-0x2d>', ':sp<CR>', opts)
+
 
 -- Visual
 -- ======
