@@ -1,9 +1,11 @@
 # Ignore plugins
-plugged/
+plugin/
 
 # Local overrides
 local-vars.vim
 local-configs.vim
+lua/local-pre.lua
+lua/local-post.lua
 
 # netrwhist - the network change history file, specific to local
 .netrwhist
