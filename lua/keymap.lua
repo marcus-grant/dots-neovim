@@ -6,7 +6,7 @@
 -- My NeoVim configurations, all submodules get loaded here (in-order).
 -- No other logic or configuration should get used here.
 -- ]]
-print("Keymap loaded")
+print('Module: Keymap loaded')
 
 -- Set these default options to be used in the mapping functions
 local opts = { noremap = true, silent = true }
@@ -37,4 +37,3 @@ keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-j>', '<C-w>j', opts)
 keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
-
