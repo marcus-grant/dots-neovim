@@ -66,6 +66,9 @@ keymap('n', '<C-n>', ':bnext<CR>', opts)
 keymap('n', '<leader><Char-0x5C>', ':vs<CR>', opts)
 keymap('n', '<leader><Char-0x2d>', ':sp<CR>', opts)
 
+-- Quit pane/window/buffer
+keymap('n', '<leader>wq', ':q<CR>', opts)
+
 
 -- Visual
 -- ======
