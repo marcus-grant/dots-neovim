@@ -6,6 +6,7 @@
 -- My NeoVim configurations, all submodules get loaded here (in-order).
 -- No other logic or configuration should get used here.
 -- ]]
+
 print("Module: Keymap loaded")
 
 -- Set these default options to be used in the mapping functions
@@ -91,6 +92,8 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- For vi mode shells like some zsh, add extra escape key using <lead><ESC>
+keymap('t', '<leader><ESC>', '<C-\\><C-N>', { silent = true, noremap = true })
 
 -- Command
 -- =======
