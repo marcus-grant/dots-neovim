@@ -78,4 +78,5 @@ return require('packer').startup(function()
     -- Colorschemes (only lua based ones).
     -- Lush gets used since it's easier to define colorschemes.
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+    use {'yorik1984/newpaper.nvim'}
 end)

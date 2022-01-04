@@ -9,6 +9,7 @@
 nvim_modules = {
     'plugins',
     'defaults',
+    'appearance',
     'fzf',
     'keymap',
 }
