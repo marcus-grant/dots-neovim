@@ -42,6 +42,7 @@ packer.init({
   }
 )
 
+-- Startup packer with all the plugins desired here
 return require('packer').startup(function()
     -- Packer to manage itself.
     use 'wbthomason/packer.nvim'
@@ -57,6 +58,17 @@ return require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/plenary.nvim'}}
     }
+
+
+    -- Commented plugin
+    -- --Simple comment toggling plugin-- no longer
+    -- use 'terrortylor/nvim-comment'
+    use({
+        "winston0410/commented.nvim",
+        config = function()
+        require("commented").setup()
+        end,
+    })
 
     -- Colorschemes (only lua based ones).
     -- Lush gets used since it's easier to define colorschemes.
