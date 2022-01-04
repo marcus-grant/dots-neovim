@@ -7,7 +7,7 @@
 -- No other logic or configuration should get used here.
 -- ]]
 
-print('Module: Plugin manager loaded')
+-- print('Module: Plugin manager loaded')
 
 local fn = vim.fn
 
@@ -59,6 +59,11 @@ return require('packer').startup(function()
         requires = {{'nvim-lua/plenary.nvim'}}
     }
 
+    -- FZF LUA
+    use {
+        'ibhagwan/fzf-lua',
+        requires = { 'kyazdani42/nvim-web-devicons' }
+    }
 
     -- Commented plugin
     -- --Simple comment toggling plugin-- no longer
