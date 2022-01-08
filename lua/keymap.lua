@@ -7,7 +7,7 @@
 -- No other logic or configuration should get used here.
 -- ]]
 
-print("Module: Keymap loaded")
+-- print("Module: Keymap loaded")
 
 -- Set these default options to be used in the mapping functions
 local opts = { noremap = true, silent = true }

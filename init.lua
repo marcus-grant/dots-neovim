@@ -7,11 +7,11 @@
 -- No other logic or configuration should get used here.
 
 nvim_modules = {
-    'plugins',
-    'defaults',
-    'appearance',
-    'fzf',
-    'keymap',
+    'plugins',      -- Should be one of the first
+    'defaults',     -- Should be early, but after plugins
+    'appearance',   -- Should be early, but after defaults
+    'fzf',          -- Should be before keymap
+    'keymap',       -- Keymap should be near the end to override
 }
 
 function _G.LoadConfigs()
@@ -19,5 +19,6 @@ function _G.LoadConfigs()
         -- print(vim.env.HOME .. '/.config/nvim/lua/' .. mod .. '.lua')
         dofile(vim.env.HOME .. '/.config/nvim/lua/' .. mod .. '.lua')
     end
+    print('Loaded configs')
 end
 LoadConfigs()

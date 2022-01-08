@@ -1,7 +1,7 @@
 -- Default options
 -- Mainly generic and global editor settings during default launches
 
-print('Module: Default options loaded')
+-- print('Module: Default options loaded')
 
 vim.wo.number				= true
 vim.o.expandtab				= true

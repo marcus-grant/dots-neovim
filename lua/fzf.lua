@@ -7,7 +7,7 @@
 -- See more config ideas and info @ https://github.com/ibhagwan/fzf-lua
 -- ]]
 
-print('Module Load: FZF Lua configs')
+-- print('Module Load: FZF Lua configs')
 
 local keymap = vim.api.nvim_set_keymap
 local default_opts = { noremap = true, silent = true } 
