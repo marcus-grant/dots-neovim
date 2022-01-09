@@ -6,18 +6,21 @@
 -- My NeoVim configurations, all submodules get loaded here (in-order).
 -- No other logic or configuration should get used here.
 
-nvim_modules = {
-    'plugins',      -- Should be one of the first
-    'defaults',     -- Should be early, but after plugins
-    'appearance',   -- Should be early, but after defaults
-    'fzf',          -- Should be before keymap
-    'keymap',       -- Keymap should be near the end to override
-}
-
 function _G.LoadConfigs()
+    local nvim_modules = {
+        'defaults',     -- Should be early
+        'plugins',      -- Should be one of the first
+        'appearance',   -- Should be early, but after defaults
+        'fzf',          -- Should be before keymap
+        'keymap',       -- Keymap should be near the end to override
+    }
     for _, mod in ipairs(nvim_modules) do
         -- print(vim.env.HOME .. '/.config/nvim/lua/' .. mod .. '.lua')
-        dofile(vim.env.HOME .. '/.config/nvim/lua/' .. mod .. '.lua')
+        -- dofile(vim.env.HOME .. '/.config/nvim/lua/' .. mod .. '.lua')
+        local ok, _ = pcall(require, mod)
+        if not ok then
+            error('Error loading ' .. module '\n\n' .. err)
+        end
     end
     print('Loaded configs')
 end

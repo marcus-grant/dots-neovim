@@ -59,6 +59,13 @@ return require('packer').startup(function()
         requires = {{'nvim-lua/plenary.nvim'}}
     }
 
+    -- Treesitter
+    -- use {
+        -- 'nvim-treesitter/nvim-treesitter',
+        -- run = ':TSUpdate'
+    -- }
+    -- require("nvim-treesitter.configs").setup({ highlight = { enable = true, use_languagetree = false } })
+
     -- FZF LUA
     use {
         'ibhagwan/fzf-lua',
