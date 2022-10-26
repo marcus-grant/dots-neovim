@@ -15,6 +15,7 @@ local default_opts = { noremap = true, silent = true }
 -- Search command keymaps
 -- PWD files
 keymap('n', '<leader>ff', "<cmd>lua require('fzf-lua').files()<CR>", default_opts)
+keymap('n', '<C-p>', "<cmd>lua require('fzf-lua').files()<CR>", default_opts)
 -- PWD (Rip)Grep
 keymap('n', '<leader>fg', "<cmd>lua require('fzf-lua').grep_project()<CR>", default_opts)
 -- Buffers

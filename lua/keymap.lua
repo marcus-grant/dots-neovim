@@ -36,7 +36,7 @@ local keymap = vim.api.nvim_set_keymap
 --      _       5f
 
 -- First map the leader key (spacebar)
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 
 -- Normal Mode
