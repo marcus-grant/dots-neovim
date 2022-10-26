@@ -87,6 +87,9 @@ return require('packer').startup(function()
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
     use {'yorik1984/newpaper.nvim'}
 
+    -- Dark Mode (on MacOS)
+    use {"f-person/auto-dark-mode.nvim"}
+
     -- LuaLine
     use {
       'nvim-lualine/lualine.nvim',
