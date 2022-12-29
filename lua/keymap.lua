@@ -101,3 +101,18 @@ keymap('t', '<leader><ESC>', '<C-\\><C-N>', { silent = true, noremap = true })
 -- Navigate menus in command view
 keymap("c", "<C-j>",  'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true, noremap = true } )
 keymap("c", "<C-k>",  'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, noremap = true } )
+
+-- ZK
+-- ==
+local zkopts = { noremap=true, silent=false }
+-- Create a new note after asking for its title.
+vim.api.nvim_set_keymap("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", zkopts)
+-- Open notes.
+vim.api.nvim_set_keymap("n", "<leader>zo", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>", zkopts)
+-- Open notes associated with the selected tags.
+vim.api.nvim_set_keymap("n", "<leader>zt", "<Cmd>ZkTags<CR>", zkopts)
+-- Search for the notes matching a given query.
+vim.api.nvim_set_keymap("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = vim.fn.input('Search: ') }<CR>", zkopts)
+-- Search for the notes matching the current visual selection.
+vim.api.nvim_set_keymap("v", "<leader>zf", ":'<,'>ZkMatch<CR>", zkopts)
+

@@ -82,6 +82,9 @@ return require('packer').startup(function()
         end,
     })
 
+    -- Zettelkasten
+    use('mickael-menu/zk-nvim')
+
     -- Colorschemes (only lua based ones).
     -- Lush gets used since it's easier to define colorschemes.
     use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
