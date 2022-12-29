@@ -32,6 +32,9 @@ else
     vim.cmd('colorscheme ' .. litemode_theme)
 end
 
+-- Set the cursor line
+vim.opt.cursorline = true
+
 -- LuaLine
 require('lualine').setup {
   options = {
