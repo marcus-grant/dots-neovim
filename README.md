@@ -24,9 +24,11 @@ then it should exist in the archive version of it.
 
 ## References
 
+* [Documentation on Lazy Plugins][lazy-plugs-me]
 * [NeoVim IDE Series Index by Shaik Zahid][neovim-ide-idx-zahid]
-    * A lot of this is based on the tips in this series.
+  * A lot of this is based on the tips in this series.
 
 
 <!-- Hidden Reference Link Sources -->
+[lazy-plugs-me]: ./doc/lazy-plugins.md "Documentation on Lazy Plugins"
 [neovim-ide-idx-zahid]: https://medium.com/@shaikzahid0713/the-neovim-series-32163eb1f5d0 "NeoVim IDE Series by Shaik Zahid"
