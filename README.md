@@ -22,13 +22,32 @@ the final commit of the previous version was:
 If it's not here in this version of the repository,
 then it should exist in the archive version of it.
 
+## Documentation
+
+Some light documentation for building this thing from
+scratch is available in the `./doc` folder.
+Below is a table of contents of sorts.
+
+### Documentation Table of Contents
+
+#### Basics
+
+* [Plugins][lazy-plugs-me]
+  * Here we explore the basics of the config structure &
+    using the lazy plugin manager.
+* [Built-in options][options-me]
+  * Neovim by itself is highly configurable.
+    This shows how to setup some of the built-in features.
+
 ## References
 
 * [Documentation on Lazy Plugins][lazy-plugs-me]
+* [Documentation on options of built-in features][options-me]
 * [NeoVim IDE Series Index by Shaik Zahid][neovim-ide-idx-zahid]
   * A lot of this is based on the tips in this series.
 
 
 <!-- Hidden Reference Link Sources -->
 [lazy-plugs-me]: ./doc/lazy-plugins.md "Documentation on Lazy Plugins"
+[options-me]: ./doc/options.md "Documentation on options of built-in features"
 [neovim-ide-idx-zahid]: https://medium.com/@shaikzahid0713/the-neovim-series-32163eb1f5d0 "NeoVim IDE Series by Shaik Zahid"
