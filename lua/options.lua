@@ -30,7 +30,7 @@ opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
 opt.pumblend = 10 -- Popup blend
 opt.pumheight = 10 -- Maximum number of entries in a popup
-opt.relativenumber = true -- Relative line numbers
+-- opt.relativenumber = true -- Relative line numbers
 opt.scrolloff = 5 -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 opt.shiftround = true -- Round indent
@@ -56,4 +56,9 @@ opt.wrap = false -- Disable line wrap
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
+
+-- Only Key Mapping to Make Early is the Leader Key
+vim.api.nvim_set_keymap("", "<Space>", "<Nop>", {noremap = true, silent = true})
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 

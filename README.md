@@ -38,11 +38,15 @@ Below is a table of contents of sorts.
 * [Built-in options][options-me]
   * Neovim by itself is highly configurable.
     This shows how to setup some of the built-in features.
+* [Documentation on key-maps][keys-me]
+  * Vim is rather infamous for it's key-maps and modal editing scheme.
+    This guide covers on how to redefine them to your liking.
 
 ## References
 
 * [Documentation on Lazy Plugins][lazy-plugs-me]
 * [Documentation on options of built-in features][options-me]
+* [Documentation on key-maps][keys-me]
 * [NeoVim IDE Series Index by Shaik Zahid][neovim-ide-idx-zahid]
   * A lot of this is based on the tips in this series.
 
@@ -50,4 +54,5 @@ Below is a table of contents of sorts.
 <!-- Hidden Reference Link Sources -->
 [lazy-plugs-me]: ./doc/lazy-plugins.md "Documentation on Lazy Plugins"
 [options-me]: ./doc/options.md "Documentation on options of built-in features"
+[keys-me]: ./doc/keys.md "Documentation on key-maps"
 [neovim-ide-idx-zahid]: https://medium.com/@shaikzahid0713/the-neovim-series-32163eb1f5d0 "NeoVim IDE Series by Shaik Zahid"

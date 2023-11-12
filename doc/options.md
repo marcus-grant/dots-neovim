@@ -8,7 +8,7 @@ In this section we'll go over some of the more common ones and
 how to configure them.
 This will be done with a new file in the `lua` folder called `options.lua`.
 
-## Folder Structure
+## Expected Files
 
 Let's revisit the folder structure of the config root.
 So it's easier to reason about the changes coming.
@@ -44,10 +44,10 @@ Most of them alter the default behavior of neovim in some way.
 local opt = vim.opt
 
 -- The built-in options
-opt.autowrite = true -- Enable auto write
+opt.autowrite = true -- Save changes when switching tabs/buffers/panes/timeout
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
-opt.completeopt = "menu,menuone,noselect"
-opt.conceallevel = 3 -- Hide * markup for bold and italic
+opt.completeopt = "menu,menuone,noselect" -- autocomplete sources
+opt.conceallevel = 3 -- ie hide * markup for bold and italic in markdown
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
 opt.cursorline = true -- Enable highlighting of the current line
 opt.expandtab = true -- Use spaces instead of tabs

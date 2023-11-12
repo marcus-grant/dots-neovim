@@ -6,5 +6,7 @@
 -- and custom lua code.
 -- Mainly used for in-order loading of other lua files.
 
+require "options"
 require "lazy-config"
+require "keys"
 
