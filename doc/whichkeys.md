@@ -1,85 +1,75 @@
+# Which-Key Plugin
+
+The first plugin to be used in this series is the
+[folke/which-key.nvim][which-key-gh] plugin.
+It provides a UI popup on the leader key press that
+provides a visible menu of keys to press next to
+perform any assignable action.
+This helps build out a large number of key-maps that
+lead to a more efficient but also memorable workflow.
+No new files will be made for this section we're only going to
+edit the `lua/plugins.lua` file and `lua/keys.lua` file.
+
+## Installation
+
+Since this is the first actual plugin to be installed,
+it's worth going over the process of using the lazy plugin manager.
+Since we created the `lua/plugins.lua` file before,
+and only gave it a return value of an empty table,
+this is the placeholder to define the plugins to install.
+
+To install any plugin with lazy in this workflow,
+open the `lua/plugins.lua` file and
+add a table entry.
+In this case it's going to be `"folke/which-key.nvim"` and
+we're going to specify to lazy load it.
+Lazy loading is a feature of lazy that allows which is that
+it will only load the plugin when it's needed.
+This is as opposed to older plugin managers that would load every
+plugin at startup regardless of whether it's going to be used or not.
+
+```lua
+-- lua/plugins.lua
+return {
+  -- Which-Key extension
+  "folke/which-key.nvim",
+  lazy = true,
+}
+```
+
+Depending on the version of lazy plugin manager,
+once the `plugins.lua` file is saved,
+lazy will automatically install the plugin.
+If not,
+then run `:Lazy` to bring up the Lazy plugin manager menu and
+enter the capitalized `I` key to ask it to install the plugin.
+You should get a prompt reporting a successful install if it worked.
+
+## Which-Key Key Bindings
+
+Now to configure our new key-bindings for which-key along with
+configuring the plugin itself.
+To preface, which-key works best for key-bindings that are
+prefixed with the leader key.
+A good use for leader key commands are the more advanced ones,
+maybe ones that aren't built-in to neovim or
+ones that are more complicated to remember.
+I think of my leader key commands as ones that in GUI based editors I would
+have to go into a menu to find or invoke.
+
+The which-key configurations will all go into
+the same `lua/keys.lua` file that we've been using before to
+define built-in key-bindings.
+Open it up and add any of the following configurations within the `setup` table.
+Feel free to skip or edit some lines that aren't to your liking.
+
+```lua
 -- lua/keys.lua
--- Author: Marcus Grant
--- Created: 2023-11-11
--- Description:
--- This file is used to define all keybindings for neovim.
--- This includes using whichkey to define leader key shortcuts with hints.
 
--- Aliases to make defining keymaps easier
-local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
-local keymap = vim.api.nvim_set_keymap
+-- Previous key bindings here
+-- ...
 
--- Remap space as leader key
--- TODO: Consider if this should be here, perhaps better to leave in options
--- keymap("", "<Space>", "<Nop>", opts)
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = " "
-
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
-    -- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts) -- left window
-keymap("n", "<C-k>", "<C-w>k", opts) -- up window
-keymap("n", "<C-j>", "<C-w>j", opts) -- down window
-keymap("n", "<C-l>", "<C-w>l", opts) -- right window
-
--- Resize with arrows when using multiple windows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<c-down>", ":resize +2<cr>", opts)
-keymap("n", "<c-right>", ":vertical resize -2<cr>", opts)
-keymap("n", "<c-left>", ":vertical resize +2<cr>", opts)
-
-
--- navigate buffers
-keymap("n", "<tab>", ":bnext<cr>", opts) -- Next Tab 
-keymap("n", "<s-tab>", ":bprevious<cr>", opts) -- Previous tab
-keymap("n", "<leader>h", ":nohlsearch<cr>", opts) -- No highlight search
-
--- move text up and down
-keymap("n", "<a-j>", "<esc>:m .+1<cr>==gi", opts) -- Alt-j 
-keymap("n", "<a-k>", "<esc>:m .-2<cr>==gi", opts) -- Alt-k
-
--- insert --
--- press jk fast to exit insert mode 
-keymap("i", "jk", "<esc>", opts) -- Insert mode -> jk -> Normal mode
-keymap("i", "kj", "<esc>", opts) -- Insert mode -> kj -> Normal mode
-
--- visual --
--- stay in indent mode
-keymap("v", "<", "<gv", opts) -- Right Indentation
-keymap("v", ">", ">gv", opts) -- Left Indentation
-
--- move text up and down
-keymap("v", "<a-j>", ":m .+1<cr>==", opts)
-keymap("v", "<a-k>", ":m .-2<cr>==", opts)
-
--- Visual Block --
--- Move text up and down
-    --Terminal --
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
---Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
-
---
--- ======== WhichKeys Section ========
---
-
--- Load which_key module and check that it can be loaded
+-- Which-Key Setup Section
 local status_ok, which_key = pcall(require, "which-key")
 if not status_ok then
     return
@@ -163,7 +153,7 @@ local opts = {
 local mappings = {
 
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
-    ["e"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- E is for Extensions
+    ["p"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- Invoking plugin manager
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
     ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
 
@@ -171,3 +161,25 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
+```
+
+### WhichKeys Notes
+
+This code block above that was added to `lua/keys.lua`,
+has quite a few configurations.
+And more will be added later,
+so it's important to understand a few things.
+
+* The earlier portion of this addition is configuring...
+  * Basic behaviors of the which-key popup
+    * Think showing of registers, breadcrumbs, operators, motions, etc.
+  * The size and appearance of the popup 
+  * What keys prompt the popup
+* The `local mappings` configuration defines what keymaps get defined with menus.
+
+## References
+
+* [GitHub: folke/which-key.nvim][which-key-gh]
+
+<!-- Hidden References -->
+[which-key-gh]: https://github.com/folke/which-key.nvim "GitHub: folke/which-key.nvim"

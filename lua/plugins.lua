@@ -7,4 +7,9 @@
 -- Plugins get returned from this module as a table.
 return {
     -- Plugin entries go here
+
+    -- Which-Key extension
+    "folke/which-key.nvim",
+    lazy = true,
 }
+
