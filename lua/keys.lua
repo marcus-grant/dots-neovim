@@ -80,7 +80,7 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 --
 
 -- Load which_key module and check that it can be loaded
-local status_ok, which_key = pcall(require, "which-key")
+local status_ok, wk = pcall(require, "which-key")
 if not status_ok then
     return
 end
@@ -111,9 +111,9 @@ local setup = {
     key_labels = {
         -- override the label used to display some keys. It doesn't effect WK in any other way.
         -- For example:
-        -- ["<space>"] = "SPC",
-        -- ["<cr>"] = "RET",
-        -- ["<tab>"] = "TAB",
+        ["<space>"] = "SPC",
+        ["<cr>"] = "RET",
+        ["<tab>"] = "TAB",
     },
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
@@ -160,14 +160,25 @@ local opts = {
     nowait = true, -- use `nowait` when creating keymaps
 }
 
+local wd_map = { -- (W)indow/Color Submmappings > (D)ark Mode SubMappings
+    name = "(d)ark Mode",
+    ["0"] = { "<cmd>DarkModeOff<CR>", "DarkModeOff" }, -- Dark Mode Off (0)
+    ["1"] = { "<cmd>DarkModeOn<CR>", "DarkModeOn" }, -- Dark Mode On (1)
+    [" "] = { "<cmd>DarkModeToggle<CR>", "ToggleDarkMode"}, -- Toggle Dark Mode
+}
+
+local w_map = { -- (W)indow/Colors mappings
+    name = "(w)indow/UI",
+    ["d"] = { wd_map, "(D)ark Mode" } -- Submappings following d for dark mode
+}
+
 local mappings = {
 
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["e"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- E is for Extensions
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
-    ["w"] = { "<cmd>w!<CR>", "Save" }, -- Save current file
-
+    ["w"] = w_map, -- Submappings following w
 }
 
-which_key.setup(setup)
-which_key.register(mappings, opts)
+wk.setup(setup)
+wk.register(mappings, opts)

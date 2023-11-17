@@ -9,4 +9,5 @@
 require "options"
 require "lazy-config"
 require "keys"
+require "appearance"
 

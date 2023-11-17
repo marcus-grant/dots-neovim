@@ -9,7 +9,20 @@ return {
     -- Plugin entries go here
 
     -- Which-Key extension
-    "folke/which-key.nvim",
-    lazy = true,
+    {
+        "folke/which-key.nvim",
+        lazy = true,
+    },
+
+    -- Gruvbox
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000 ,
+        config = true,
+    },
+
+    -- Tokyo Night
+    { "folke/tokyonight.nvim" },
+
 }
 

@@ -122,6 +122,11 @@ to install.
 -- lua/plugins.lua
 return {
     -- Plugin entries go here
+    -- Each plugin gets its own table entry and at least a string for the repo
+    {
+      "repo_owner/repo_name",
+      some_option = "some_value",
+    },
 }
 ```
 
