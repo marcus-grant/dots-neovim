@@ -9,20 +9,18 @@ return {
     -- Plugin entries go here
 
     -- Which-Key extension
-    {
-        "folke/which-key.nvim",
-        lazy = true,
-    },
+    { "folke/which-key.nvim", lazy = true },
 
     -- Gruvbox
-    {
-        "ellisonleao/gruvbox.nvim",
+    { "ellisonleao/gruvbox.nvim",
         priority = 1000 ,
-        config = true,
-    },
+        config = true },
 
     -- Tokyo Night
     { "folke/tokyonight.nvim" },
 
+    -- LuaLine
+    { 'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' } },
 }
 
