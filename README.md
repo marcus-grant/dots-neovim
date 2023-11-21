@@ -1,6 +1,6 @@
 # Neovim Dotfiles
 
-NeoVIm is my go to IDE, yes IDE not text editor. For quick and dirty editing of text 
+NeoVIm is my go to IDE, yes IDE not text editor. For quick and dirty editing of text
 
 ## Versions
 
@@ -53,6 +53,10 @@ Below is a table of contents of sorts.
     and be more customizable than the default one.
   * The first use of icons will occur in this configuration,
     which makes for much better glance-able information.
+* [Documentation on FZF][fzf-me]
+  * FZF is a fuzzy finder that can be used to find files, buffers, etc.
+  * It has tons of workflow options that only some of will be covered here.
+  * I use it more to find files to open than any file explorer.
 
 ## References
 
@@ -61,9 +65,11 @@ Below is a table of contents of sorts.
 * [Documentation on key-maps][keys-me]
 * [Documentation on configuring appearance][appearance-me]
 * [Documentation on configuring the status line][statusline-me]
+* [Documentation on FZF][fzf-me]
+  * FZF is a fuzzy finder that can be used to find files, buffers, etc.
+  * It's used in this configuration to find files and buffers.
 * [NeoVim IDE Series Index by Shaik Zahid][neovim-ide-idx-zahid]
   * A lot of this is based on the tips in this series.
-
 
 <!-- Hidden Reference Link Sources -->
 [lazy-plugs-me]: ./doc/lazy-plugins.md "Documentation on Lazy Plugins"
@@ -71,4 +77,5 @@ Below is a table of contents of sorts.
 [keys-me]: ./doc/keys.md "Documentation on key-maps"
 [appearance-me]: ./doc/appearance.md "Documentation on configuring appearance"
 [statusline-me]: ./doc/status-line.md "Documentation on configuring the status line"
+[fzf-me]: ./doc/fzf.md "Documentation on FZF"
 [neovim-ide-idx-zahid]: https://medium.com/@shaikzahid0713/the-neovim-series-32163eb1f5d0 "NeoVim IDE Series by Shaik Zahid"

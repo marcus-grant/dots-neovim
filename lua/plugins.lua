@@ -22,5 +22,13 @@ return {
     -- LuaLine
     { 'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' } },
+    
+    -- fzf-lua
+    { "ibhagwan/fzf-lua",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function() -- calling `setup` is optional for customization
+            require("fzf-lua").setup({})
+        end
+    }, -- icon support
 }
 

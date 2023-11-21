@@ -160,24 +160,32 @@ local opts = {
     nowait = true, -- use `nowait` when creating keymaps
 }
 
-local wd_map = { -- (W)indow/Color Submmappings > (D)ark Mode SubMappings
-    name = "(d)ark Mode",
-    ["0"] = { "<cmd>DarkModeOff<CR>", "DarkModeOff" }, -- Dark Mode Off (0)
-    ["1"] = { "<cmd>DarkModeOn<CR>", "DarkModeOn" }, -- Dark Mode On (1)
-    [" "] = { "<cmd>DarkModeToggle<CR>", "ToggleDarkMode"}, -- Toggle Dark Mode
-}
-
-local w_map = { -- (W)indow/Colors mappings
-    name = "(w)indow/UI",
-    ["d"] = { wd_map, "(D)ark Mode" } -- Submappings following d for dark mode
-}
 
 local mappings = {
-
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["e"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- E is for Extensions
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
-    ["w"] = w_map, -- Submappings following w
+    ["w"] = { -- (W)indow/Colors mappings
+        name = "(w)indow/UI",
+        ["d"] = { -- (W)indow/Color Submmappings > (D)ark Mode SubMappings
+            name = "(d)ark Mode",
+            ["0"] = { "<cmd>DarkModeOff<CR>", "DarkModeOff" }, -- Dark Mode Off (0)
+            ["1"] = { "<cmd>DarkModeOn<CR>", "DarkModeOn" }, -- Dark Mode On (1)
+            [" "] = { "<cmd>DarkModeToggle<CR>", "ToggleDarkMode"}, -- Toggle Dark Mode
+        }
+    },
+    ["f"] = { -- (f)ind
+        name = "(f)ind",
+        ["f"] = { "<cmd>FzfLua files<CR>", "Files "},
+        [" "] = { "<cmd>FzfLua live_grep<CR>", "Full Text"},
+        ["b"] = { "<cmd>FzfLua buffers<CR>", "Buffers"},
+        ["h"] = { "<cmd>FzfLua help_tags<CR>", "Help"},
+        ["g"] = { "<cmd>FzfLua git_files<CR>", "Git Files"},
+        ["w"] = { "<cmd>FzfLua grep_cword<CR>", "Word"},
+        ["c"] = { "<cmd>FzfLua colorschemes<CR>", "Colorschemes"},
+        ["k"] = { "<cmd>FzfLua keymaps<CR>", "Keymaps"},
+        ["s"] = { "<cmd>FzfLua git_status<CR>", "Git Status"},
+    },
 }
 
 wk.setup(setup)
