@@ -30,5 +30,15 @@ return {
             require("fzf-lua").setup({})
         end
     }, -- icon support
+
+    -- comment.nvim
+    {
+        "numToStr/Comment.nvim",
+    },
+    -- { "terrortylor/nvim-comment",
+        -- config = function()
+        --     require('nvim_comment').setup({ create_mappings = false })
+        -- end
+    -- },
 }
 

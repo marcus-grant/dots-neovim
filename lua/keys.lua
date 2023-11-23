@@ -75,6 +75,10 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- Comment.nvim
+keymap('n', '<leader>/', '<Plug>(comment_toggle_linewise_current)', opts)
+keymap('x', '<leader>/', '<Plug>(comment_toggle_linewise_visual)', opts)
+
 --
 -- ======== WhichKeys Section ========
 --
@@ -186,6 +190,7 @@ local mappings = {
         ["k"] = { "<cmd>FzfLua keymaps<CR>", "Keymaps"},
         ["s"] = { "<cmd>FzfLua git_status<CR>", "Git Status"},
     },
+    ["/"] = "Comment Toggle", -- Toggle Comments
 }
 
 wk.setup(setup)
