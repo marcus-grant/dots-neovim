@@ -169,14 +169,11 @@ local mappings = {
     ["k"] = { "<cmd>bdelete<CR>", "Kill Buffer" },  -- Close current file
     ["e"] = { "<cmd>Lazy<CR>", "Plugin Manager" }, -- E is for Extensions
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
-    ["w"] = { -- (W)indow/Colors mappings
+    ["w"] = {
         name = "(w)indow/UI",
-        ["d"] = { -- (W)indow/Color Submmappings > (D)ark Mode SubMappings
-            name = "(d)ark Mode",
-            ["0"] = { "<cmd>DarkModeOff<CR>", "DarkModeOff" }, -- Dark Mode Off (0)
-            ["1"] = { "<cmd>DarkModeOn<CR>", "DarkModeOn" }, -- Dark Mode On (1)
-            [" "] = { "<cmd>DarkModeToggle<CR>", "ToggleDarkMode"}, -- Toggle Dark Mode
-        }
+        ["d"] = { "<cmd>DarkModeOn<CR>", "DarkModeOff" }, -- Dark Mode On (d)
+        ["l"] = { "<cmd>DarkModeOff<CR>", "DarkModeOn" }, -- Dark Mode Off (l)
+        [" "] = { "<cmd>DarkModeToggle<CR>", "ToggleDarkMode"}, -- Toggle Dark Mode
     },
     ["f"] = { -- (f)ind
         name = "(f)ind",

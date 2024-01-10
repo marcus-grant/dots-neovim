@@ -16,13 +16,16 @@ return {
         priority = 1000 ,
         config = true },
 
+    -- Melange
+    { "savq/melange-nvim" },
+
     -- Tokyo Night
     { "folke/tokyonight.nvim" },
 
     -- LuaLine
     { 'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' } },
-    
+
     -- fzf-lua
     { "ibhagwan/fzf-lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },

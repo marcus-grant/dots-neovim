@@ -79,7 +79,7 @@ end
 -- Define function to set light mode colors
 function _G.dark_mode_off()
   vim.g.dark_mode = false -- Set dark mode tracking variable to false
-  vim.cmd("colorscheme " .. "tokyonight") -- Set "light mode" colorscheme
+  vim.cmd("colorscheme " .. "melange") -- Set "light mode" colorscheme
   vim.opt.background = "light" -- Set background to light
 end
 
@@ -89,8 +89,11 @@ function _G.dark_mode_by_time(lite_hr, dark_hr)
   lite_hr = lite_hr or 6 -- default hour of 6
   local hr = tonumber(vim.fn.strftime("%H")) -- Get current hour (24hr)
   -- If before dark_hr or after lite_hr, set dark mode
-  if hr >= dark_hr or hr < lite_hr then dark_mode_on()
-  else set_light_mode() end -- Or else set light mode
+  if hr >= dark_hr or hr < lite_hr then
+      dark_mode_on()
+  else
+      dark_mode_off()
+  end -- Or else set light mode
 end
 
 -- Function that toggles between light and dark mode
@@ -104,7 +107,7 @@ vim.cmd("command! DarkModeOn lua dark_mode_on()")
 vim.cmd("command! DarkModeOff lua dark_mode_off()")
 vim.cmd("command! DarkModeByTime lua dark_mode_by_time()")
 vim.cmd("command! DarkModeToggle lua dark_mode_toggle()")
-dark_mode_by_time(15, 7) -- When starting, set dark mode by time
+vim.cmd('DarkModeByTime')
 
 -- LuaLine Configuration
 require('lualine').setup {
