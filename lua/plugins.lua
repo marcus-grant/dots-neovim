@@ -11,6 +11,38 @@ return {
     -- Which-Key extension
     { "folke/which-key.nvim", lazy = true },
 
+    -- fzf-lua
+    { "ibhagwan/fzf-lua",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function() -- calling `setup` is optional for customization
+            require("fzf-lua").setup({})
+        end
+    }, -- icon support
+
+    -- comment.nvim
+    {
+        "numToStr/Comment.nvim",
+    },
+
+    -- TreeSitter
+    { "nvim-treesitter/nvim-treesitter",
+        config = function()
+            local treesitter = require("nvim-treesitter.configs")
+            treesitter.setup({
+                highlight = { enable = true },
+                indent = { enable = true },
+                ensure_installed = {
+                    "json", "yaml", "xml", "toml", "tsv", "markdown", -- markup
+                    "html", "css", "javascript", "typescript", "tsx", -- web
+                    "svelte", "vue", "graphql", -- web extras
+                    "python", "php", "lua", "bash", "sql", -- script & backend
+                    "java", "go", "rust", "c", "cpp", -- compiled
+                    "dockerfile", "gitcommit", "gitignore", "make", "nix", -- cfg
+                },
+            })
+        end,
+    },
+
     -- Gruvbox
     { "ellisonleao/gruvbox.nvim",
         priority = 1000 ,
@@ -25,23 +57,5 @@ return {
     -- LuaLine
     { 'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' } },
-
-    -- fzf-lua
-    { "ibhagwan/fzf-lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-        config = function() -- calling `setup` is optional for customization
-            require("fzf-lua").setup({})
-        end
-    }, -- icon support
-
-    -- comment.nvim
-    {
-        "numToStr/Comment.nvim",
-    },
-    -- { "terrortylor/nvim-comment",
-        -- config = function()
-        --     require('nvim_comment').setup({ create_mappings = false })
-        -- end
-    -- },
 }
 
