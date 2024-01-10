@@ -37,9 +37,10 @@ return {
         end,
     },
 
-    -- Mason
+    -- LSP / Mason
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
+    { 'neovim/nvim-lspconfig' },
 
     -- Gruvbox
     { 'ellisonleao/gruvbox.nvim',

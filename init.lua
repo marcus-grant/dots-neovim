@@ -8,6 +8,7 @@
 
 require "options"
 require "lazy-config"
+require "lsp"
 require "keys"
 require "appearance"
 
