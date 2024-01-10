@@ -12,11 +12,11 @@ require("gruvbox").setup({
     underline = true,
     bold = true,
     italic = {
-      strings = true,
+      strings = false,
       emphasis = true,
       comments = true,
       operators = false,
-      folds = true,
+      folds = false,
     },
     strikethrough = true,
     invert_selection = false,
@@ -108,6 +108,11 @@ vim.cmd("command! DarkModeOff lua dark_mode_off()")
 vim.cmd("command! DarkModeByTime lua dark_mode_by_time()")
 vim.cmd("command! DarkModeToggle lua dark_mode_toggle()")
 vim.cmd('DarkModeByTime')
+
+-- Configuration overrides from themes
+
+
+
 
 -- LuaLine Configuration
 require('lualine').setup {

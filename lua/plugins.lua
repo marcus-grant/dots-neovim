@@ -8,51 +8,49 @@
 return {
     -- Plugin entries go here
 
-    -- Which-Key extension
-    { "folke/which-key.nvim", lazy = true },
+    { 'folke/which-key.nvim', lazy = true }, -- Which-Key extension
 
-    -- fzf-lua
-    { "ibhagwan/fzf-lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+    { 'ibhagwan/fzf-lua', -- fzf-lua
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function() -- calling `setup` is optional for customization
-            require("fzf-lua").setup({})
+            require('fzf-lua').setup({})
         end
     }, -- icon support
 
-    -- comment.nvim
-    {
-        "numToStr/Comment.nvim",
-    },
+    { 'numToStr/Comment.nvim' }, -- comment.nvim
 
-    -- TreeSitter
-    { "nvim-treesitter/nvim-treesitter",
+    { 'nvim-treesitter/nvim-treesitter', -- TreeSitter
         config = function()
-            local treesitter = require("nvim-treesitter.configs")
+            local treesitter = require('nvim-treesitter.configs')
             treesitter.setup({
                 highlight = { enable = true },
                 indent = { enable = true },
                 ensure_installed = {
-                    "json", "yaml", "xml", "toml", "tsv", "markdown", -- markup
-                    "html", "css", "javascript", "typescript", "tsx", -- web
-                    "svelte", "vue", "graphql", -- web extras
-                    "python", "php", "lua", "bash", "sql", -- script & backend
-                    "java", "go", "rust", "c", "cpp", -- compiled
-                    "dockerfile", "gitcommit", "gitignore", "make", "nix", -- cfg
+                    'json', 'yaml', 'xml', 'toml', 'tsv', 'markdown', -- markup
+                    'html', 'css', 'javascript', 'typescript', 'tsx', -- web
+                    'svelte', 'vue', 'graphql', -- web extras
+                    'python', 'php', 'lua', 'bash', 'sql', -- script & backend
+                    'java', 'go', 'rust', 'c', 'cpp', -- compiled
+                    'dockerfile', 'gitcommit', 'gitignore', 'make', 'nix', -- cfg
                 },
             })
         end,
     },
 
+    -- Mason
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
+
     -- Gruvbox
-    { "ellisonleao/gruvbox.nvim",
+    { 'ellisonleao/gruvbox.nvim',
         priority = 1000 ,
         config = true },
 
     -- Melange
-    { "savq/melange-nvim" },
+    { 'savq/melange-nvim' },
 
     -- Tokyo Night
-    { "folke/tokyonight.nvim" },
+    { 'folke/tokyonight.nvim' },
 
     -- LuaLine
     { 'nvim-lualine/lualine.nvim',
